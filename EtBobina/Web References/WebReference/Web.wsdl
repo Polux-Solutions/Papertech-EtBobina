@@ -1,0 +1,1998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/Web" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/Web" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/Web" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="Capitalize">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="texto" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Capitalize_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Fecha_Trabajo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="turno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="horario" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Fecha_Trabajo_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiarioSalida">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="turno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="horario" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="rodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="pesoNeto" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="pesoPalet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="metrosRodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="metrosPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="cerrar" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="actualizarPalet" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiarioSalida_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="DiarioSalida2">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="turno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="horario" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="rodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="pesoNeto" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="pesoPalet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="metrosRodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="metrosPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="cerrar" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="actualizarPalet" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiarioSalida2_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="DiarioSalida3">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="turno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="horario" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bobinaNo" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="rodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="pesoNeto" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="pesoPalet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="metrosRodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="metrosPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="cerrar" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="actualizarPalet" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiarioSalida3_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="DiarioSalida4">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="turno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="horario" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bobinaNo" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="rodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="pesoNeto" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="pesoPalet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="metrosRodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="metrosPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="ancho" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="gramaje" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="calibre" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="cerrar" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="actualizarPalet" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiarioSalida4_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="DiarioSalida5">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="turno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="horario" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bobinaNo" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="rodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="pesoNeto" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="pesoPalet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="metrosRodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="metrosPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="ancho" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="gramaje" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="calibre" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="cerrar" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="actualizarPalet" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="pulper" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="desclasificado" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiarioSalida5_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="DiarioSalida6">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="turno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="horario" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bobinaNo" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="rodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="pesoNeto" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="pesoPalet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="metrosRodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="metrosPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="ancho" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="gramaje" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="calibre" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="cerrar" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="actualizarPalet" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="pulper" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="desclasificado" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="pendienteRevisar" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiarioSalida6_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="DiarioSalida7">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="turno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="horario" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bobinaNo" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="rodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="pesoNeto" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="pesoPalet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="metrosRodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="metrosPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="ancho" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="gramaje" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="calibre" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="cerrar" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="actualizarPalet" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="pulper" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="desclasificado" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="pendienteRevisar" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="cZZ_Ancho" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="cZZ_Rodajas" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiarioSalida7_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Rechazos">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xCodigo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="xBobina" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="xRodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="xPesoEstimado" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Rechazos_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="DiarioSalida_FruverPack">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="turno" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="horario" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="noOP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bobinaNo" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="rodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="pesoNeto" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="pesoPalet" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="metrosRodajas" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="metrosPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="ancho" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="gramaje" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="calibre" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="cerrar" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="actualizarPalet" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="pendienteRevisar" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DiarioSalida_FruverPack_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Verificar_No_Bobina">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="oP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bobina" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Verificar_No_Bobina_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Verificar_Peso_Bobina">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="oP" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bobina" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="pesoPalet" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Verificar_Peso_Bobina_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Verificar_No_Palet">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Verificar_No_Palet_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Peso_OF_Bobina">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xOF" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="xBobina" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="generarXML" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="xAnyo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Peso_OF_Bobina_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="XML_Peso_Bobina">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xOF" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="xBobina" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="XML_Peso_Bobina_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="EliminarDiarioSalida">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="noReserva" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="orden" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="referencia" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="variante" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="cantidad" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="EliminarDiarioSalida_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Bascula">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="texto" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="asunto" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Bascula_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Baja_Papel2aStock">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empleado" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lote" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Baja_Papel2aStock_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Baja_Papel2aDiario">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="empleado" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="loteNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Baja_Papel2aDiario_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Baja_Papel2a">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="entryNo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Baja_Papel2a_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Abrir_OP">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="noOP" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Abrir_OP_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Cambiar_Palet">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="palet" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Cambiar_Palet_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Crear_OP">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="pedido" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="la161nea" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="referencia" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="variante" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="almaca130n" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="cantidad" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="refExterna" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="observaciones" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Crear_OP_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Pesaje">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="_Proveedor" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="_Matricula" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="_Referencia" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="_Albaran" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="_Ubicacion" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Pesaje_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Copiar_Proyectos">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Copiar_Proyectos_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Correo_Resumen_Turno">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xFecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="xTurno" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Resumen_Turno_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Formato_da161a">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="_da161a" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Formato_da161a_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Formato_mes">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="_mes" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Formato_mes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Formato_anyo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="_anyo" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Formato_anyo_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Resumen_Dia">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xFecha" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Resumen_Dia_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Correo_Diario_Mantenimiento">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Correo_Diario_Mantenimiento_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Correo_OTM_Pendientes">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Correo_OTM_Pendientes_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Minutos_Rotura_Dia">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fechaBucle" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Minutos_Rotura_Dia_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Minutos_Paro_Turno">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="filtroHorario" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Minutos_Paro_Turno_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Num_Paros_Turno">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="filtroHorario" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Num_Paros_Turno_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Iniciar_Colas">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Iniciar_Colas_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Crear_OP_Fecha">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="pedido" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="la161nea" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="referencia" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="variante" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="almaca130n" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="cantidad" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="refExterna" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="observaciones" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Crear_OP_Fecha_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Lab_Variantes">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Correo_Lab_Variantes_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Correo_Albaran_Lab_Prueba">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xDoc" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Albaran_Lab_Prueba_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Calcular_peso_Bobinadora">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xFecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="xHorario" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Calcular_peso_Bobinadora_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Calcular_peso_Bobinadora_dia">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xFecha" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Calcular_peso_Bobinadora_dia_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Minutos_Paro_Turno_New">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="filtroHorario" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Minutos_Paro_Turno_New_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Minutos_Rotura_Dia_New">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fechaBucle" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Minutos_Rotura_Dia_New_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Parada_Fin_Turno">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="filtroHorario" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Parada_Fin_Turno_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Ask">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xCliente" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Ask_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Counter">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xCliente" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Counter_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Insertar">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="xOF" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="xPlan" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="xLine" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="xOK" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="xTexto" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Insertar_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Insertar2">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xTexto" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Insertar2_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Borrar">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xPalet" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Borrar_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Existe">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xPalet" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Existe_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Rechazo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xPalet" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="xPulper" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="xDesclasificado" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Plan_Verificacion_Rechazo_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xPulper" type="boolean" />
+            <element minOccurs="1" maxOccurs="1" name="xDesclasificado" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Cambio_Rollo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xRollo" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="xAnchoRodaja" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="xAnchoMandril" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="xRojadaDura" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Cambio_Rollo_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Minutos_Rotura_Dia_10">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fechaBucle" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Minutos_Rotura_Dia_10_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Resumen_Turno_Prueba">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xFecha" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="xTurno" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Resumen_Turno_Prueba_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Correo_Resumen_Dia_Prueba">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xFecha" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Resumen_Dia_Prueba_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="Correo_Control_Stock">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="xFecha" type="date" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="Correo_Control_Stock_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="Capitalize">
+    <part name="parameters" element="tns:Capitalize" />
+  </message>
+  <message name="Capitalize_Result">
+    <part name="parameters" element="tns:Capitalize_Result" />
+  </message>
+  <message name="Fecha_Trabajo">
+    <part name="parameters" element="tns:Fecha_Trabajo" />
+  </message>
+  <message name="Fecha_Trabajo_Result">
+    <part name="parameters" element="tns:Fecha_Trabajo_Result" />
+  </message>
+  <message name="DiarioSalida">
+    <part name="parameters" element="tns:DiarioSalida" />
+  </message>
+  <message name="DiarioSalida_Result">
+    <part name="parameters" element="tns:DiarioSalida_Result" />
+  </message>
+  <message name="DiarioSalida2">
+    <part name="parameters" element="tns:DiarioSalida2" />
+  </message>
+  <message name="DiarioSalida2_Result">
+    <part name="parameters" element="tns:DiarioSalida2_Result" />
+  </message>
+  <message name="DiarioSalida3">
+    <part name="parameters" element="tns:DiarioSalida3" />
+  </message>
+  <message name="DiarioSalida3_Result">
+    <part name="parameters" element="tns:DiarioSalida3_Result" />
+  </message>
+  <message name="DiarioSalida4">
+    <part name="parameters" element="tns:DiarioSalida4" />
+  </message>
+  <message name="DiarioSalida4_Result">
+    <part name="parameters" element="tns:DiarioSalida4_Result" />
+  </message>
+  <message name="DiarioSalida5">
+    <part name="parameters" element="tns:DiarioSalida5" />
+  </message>
+  <message name="DiarioSalida5_Result">
+    <part name="parameters" element="tns:DiarioSalida5_Result" />
+  </message>
+  <message name="DiarioSalida6">
+    <part name="parameters" element="tns:DiarioSalida6" />
+  </message>
+  <message name="DiarioSalida6_Result">
+    <part name="parameters" element="tns:DiarioSalida6_Result" />
+  </message>
+  <message name="DiarioSalida7">
+    <part name="parameters" element="tns:DiarioSalida7" />
+  </message>
+  <message name="DiarioSalida7_Result">
+    <part name="parameters" element="tns:DiarioSalida7_Result" />
+  </message>
+  <message name="Rechazos">
+    <part name="parameters" element="tns:Rechazos" />
+  </message>
+  <message name="Rechazos_Result">
+    <part name="parameters" element="tns:Rechazos_Result" />
+  </message>
+  <message name="DiarioSalida_FruverPack">
+    <part name="parameters" element="tns:DiarioSalida_FruverPack" />
+  </message>
+  <message name="DiarioSalida_FruverPack_Result">
+    <part name="parameters" element="tns:DiarioSalida_FruverPack_Result" />
+  </message>
+  <message name="Verificar_No_Bobina">
+    <part name="parameters" element="tns:Verificar_No_Bobina" />
+  </message>
+  <message name="Verificar_No_Bobina_Result">
+    <part name="parameters" element="tns:Verificar_No_Bobina_Result" />
+  </message>
+  <message name="Verificar_Peso_Bobina">
+    <part name="parameters" element="tns:Verificar_Peso_Bobina" />
+  </message>
+  <message name="Verificar_Peso_Bobina_Result">
+    <part name="parameters" element="tns:Verificar_Peso_Bobina_Result" />
+  </message>
+  <message name="Verificar_No_Palet">
+    <part name="parameters" element="tns:Verificar_No_Palet" />
+  </message>
+  <message name="Verificar_No_Palet_Result">
+    <part name="parameters" element="tns:Verificar_No_Palet_Result" />
+  </message>
+  <message name="Peso_OF_Bobina">
+    <part name="parameters" element="tns:Peso_OF_Bobina" />
+  </message>
+  <message name="Peso_OF_Bobina_Result">
+    <part name="parameters" element="tns:Peso_OF_Bobina_Result" />
+  </message>
+  <message name="XML_Peso_Bobina">
+    <part name="parameters" element="tns:XML_Peso_Bobina" />
+  </message>
+  <message name="XML_Peso_Bobina_Result">
+    <part name="parameters" element="tns:XML_Peso_Bobina_Result" />
+  </message>
+  <message name="EliminarDiarioSalida">
+    <part name="parameters" element="tns:EliminarDiarioSalida" />
+  </message>
+  <message name="EliminarDiarioSalida_Result">
+    <part name="parameters" element="tns:EliminarDiarioSalida_Result" />
+  </message>
+  <message name="Correo_Bascula">
+    <part name="parameters" element="tns:Correo_Bascula" />
+  </message>
+  <message name="Correo_Bascula_Result">
+    <part name="parameters" element="tns:Correo_Bascula_Result" />
+  </message>
+  <message name="Baja_Papel2aStock">
+    <part name="parameters" element="tns:Baja_Papel2aStock" />
+  </message>
+  <message name="Baja_Papel2aStock_Result">
+    <part name="parameters" element="tns:Baja_Papel2aStock_Result" />
+  </message>
+  <message name="Baja_Papel2aDiario">
+    <part name="parameters" element="tns:Baja_Papel2aDiario" />
+  </message>
+  <message name="Baja_Papel2aDiario_Result">
+    <part name="parameters" element="tns:Baja_Papel2aDiario_Result" />
+  </message>
+  <message name="Baja_Papel2a">
+    <part name="parameters" element="tns:Baja_Papel2a" />
+  </message>
+  <message name="Baja_Papel2a_Result">
+    <part name="parameters" element="tns:Baja_Papel2a_Result" />
+  </message>
+  <message name="Abrir_OP">
+    <part name="parameters" element="tns:Abrir_OP" />
+  </message>
+  <message name="Abrir_OP_Result">
+    <part name="parameters" element="tns:Abrir_OP_Result" />
+  </message>
+  <message name="Cambiar_Palet">
+    <part name="parameters" element="tns:Cambiar_Palet" />
+  </message>
+  <message name="Cambiar_Palet_Result">
+    <part name="parameters" element="tns:Cambiar_Palet_Result" />
+  </message>
+  <message name="Crear_OP">
+    <part name="parameters" element="tns:Crear_OP" />
+  </message>
+  <message name="Crear_OP_Result">
+    <part name="parameters" element="tns:Crear_OP_Result" />
+  </message>
+  <message name="Correo_Pesaje">
+    <part name="parameters" element="tns:Correo_Pesaje" />
+  </message>
+  <message name="Correo_Pesaje_Result">
+    <part name="parameters" element="tns:Correo_Pesaje_Result" />
+  </message>
+  <message name="Copiar_Proyectos">
+    <part name="parameters" element="tns:Copiar_Proyectos" />
+  </message>
+  <message name="Copiar_Proyectos_Result">
+    <part name="parameters" element="tns:Copiar_Proyectos_Result" />
+  </message>
+  <message name="Correo_Resumen_Turno">
+    <part name="parameters" element="tns:Correo_Resumen_Turno" />
+  </message>
+  <message name="Correo_Resumen_Turno_Result">
+    <part name="parameters" element="tns:Correo_Resumen_Turno_Result" />
+  </message>
+  <message name="Formato_da161a">
+    <part name="parameters" element="tns:Formato_da161a" />
+  </message>
+  <message name="Formato_da161a_Result">
+    <part name="parameters" element="tns:Formato_da161a_Result" />
+  </message>
+  <message name="Formato_mes">
+    <part name="parameters" element="tns:Formato_mes" />
+  </message>
+  <message name="Formato_mes_Result">
+    <part name="parameters" element="tns:Formato_mes_Result" />
+  </message>
+  <message name="Formato_anyo">
+    <part name="parameters" element="tns:Formato_anyo" />
+  </message>
+  <message name="Formato_anyo_Result">
+    <part name="parameters" element="tns:Formato_anyo_Result" />
+  </message>
+  <message name="Correo_Resumen_Dia">
+    <part name="parameters" element="tns:Correo_Resumen_Dia" />
+  </message>
+  <message name="Correo_Resumen_Dia_Result">
+    <part name="parameters" element="tns:Correo_Resumen_Dia_Result" />
+  </message>
+  <message name="Correo_Diario_Mantenimiento">
+    <part name="parameters" element="tns:Correo_Diario_Mantenimiento" />
+  </message>
+  <message name="Correo_Diario_Mantenimiento_Result">
+    <part name="parameters" element="tns:Correo_Diario_Mantenimiento_Result" />
+  </message>
+  <message name="Correo_OTM_Pendientes">
+    <part name="parameters" element="tns:Correo_OTM_Pendientes" />
+  </message>
+  <message name="Correo_OTM_Pendientes_Result">
+    <part name="parameters" element="tns:Correo_OTM_Pendientes_Result" />
+  </message>
+  <message name="Minutos_Rotura_Dia">
+    <part name="parameters" element="tns:Minutos_Rotura_Dia" />
+  </message>
+  <message name="Minutos_Rotura_Dia_Result">
+    <part name="parameters" element="tns:Minutos_Rotura_Dia_Result" />
+  </message>
+  <message name="Minutos_Paro_Turno">
+    <part name="parameters" element="tns:Minutos_Paro_Turno" />
+  </message>
+  <message name="Minutos_Paro_Turno_Result">
+    <part name="parameters" element="tns:Minutos_Paro_Turno_Result" />
+  </message>
+  <message name="Num_Paros_Turno">
+    <part name="parameters" element="tns:Num_Paros_Turno" />
+  </message>
+  <message name="Num_Paros_Turno_Result">
+    <part name="parameters" element="tns:Num_Paros_Turno_Result" />
+  </message>
+  <message name="Iniciar_Colas">
+    <part name="parameters" element="tns:Iniciar_Colas" />
+  </message>
+  <message name="Iniciar_Colas_Result">
+    <part name="parameters" element="tns:Iniciar_Colas_Result" />
+  </message>
+  <message name="Crear_OP_Fecha">
+    <part name="parameters" element="tns:Crear_OP_Fecha" />
+  </message>
+  <message name="Crear_OP_Fecha_Result">
+    <part name="parameters" element="tns:Crear_OP_Fecha_Result" />
+  </message>
+  <message name="Correo_Lab_Variantes">
+    <part name="parameters" element="tns:Correo_Lab_Variantes" />
+  </message>
+  <message name="Correo_Lab_Variantes_Result">
+    <part name="parameters" element="tns:Correo_Lab_Variantes_Result" />
+  </message>
+  <message name="Correo_Albaran_Lab_Prueba">
+    <part name="parameters" element="tns:Correo_Albaran_Lab_Prueba" />
+  </message>
+  <message name="Correo_Albaran_Lab_Prueba_Result">
+    <part name="parameters" element="tns:Correo_Albaran_Lab_Prueba_Result" />
+  </message>
+  <message name="Calcular_peso_Bobinadora">
+    <part name="parameters" element="tns:Calcular_peso_Bobinadora" />
+  </message>
+  <message name="Calcular_peso_Bobinadora_Result">
+    <part name="parameters" element="tns:Calcular_peso_Bobinadora_Result" />
+  </message>
+  <message name="Calcular_peso_Bobinadora_dia">
+    <part name="parameters" element="tns:Calcular_peso_Bobinadora_dia" />
+  </message>
+  <message name="Calcular_peso_Bobinadora_dia_Result">
+    <part name="parameters" element="tns:Calcular_peso_Bobinadora_dia_Result" />
+  </message>
+  <message name="Minutos_Paro_Turno_New">
+    <part name="parameters" element="tns:Minutos_Paro_Turno_New" />
+  </message>
+  <message name="Minutos_Paro_Turno_New_Result">
+    <part name="parameters" element="tns:Minutos_Paro_Turno_New_Result" />
+  </message>
+  <message name="Minutos_Rotura_Dia_New">
+    <part name="parameters" element="tns:Minutos_Rotura_Dia_New" />
+  </message>
+  <message name="Minutos_Rotura_Dia_New_Result">
+    <part name="parameters" element="tns:Minutos_Rotura_Dia_New_Result" />
+  </message>
+  <message name="Parada_Fin_Turno">
+    <part name="parameters" element="tns:Parada_Fin_Turno" />
+  </message>
+  <message name="Parada_Fin_Turno_Result">
+    <part name="parameters" element="tns:Parada_Fin_Turno_Result" />
+  </message>
+  <message name="Plan_Verificacion_Ask">
+    <part name="parameters" element="tns:Plan_Verificacion_Ask" />
+  </message>
+  <message name="Plan_Verificacion_Ask_Result">
+    <part name="parameters" element="tns:Plan_Verificacion_Ask_Result" />
+  </message>
+  <message name="Plan_Verificacion_Counter">
+    <part name="parameters" element="tns:Plan_Verificacion_Counter" />
+  </message>
+  <message name="Plan_Verificacion_Counter_Result">
+    <part name="parameters" element="tns:Plan_Verificacion_Counter_Result" />
+  </message>
+  <message name="Plan_Verificacion_Insertar">
+    <part name="parameters" element="tns:Plan_Verificacion_Insertar" />
+  </message>
+  <message name="Plan_Verificacion_Insertar_Result">
+    <part name="parameters" element="tns:Plan_Verificacion_Insertar_Result" />
+  </message>
+  <message name="Plan_Verificacion_Insertar2">
+    <part name="parameters" element="tns:Plan_Verificacion_Insertar2" />
+  </message>
+  <message name="Plan_Verificacion_Insertar2_Result">
+    <part name="parameters" element="tns:Plan_Verificacion_Insertar2_Result" />
+  </message>
+  <message name="Plan_Verificacion_Borrar">
+    <part name="parameters" element="tns:Plan_Verificacion_Borrar" />
+  </message>
+  <message name="Plan_Verificacion_Borrar_Result">
+    <part name="parameters" element="tns:Plan_Verificacion_Borrar_Result" />
+  </message>
+  <message name="Plan_Verificacion_Existe">
+    <part name="parameters" element="tns:Plan_Verificacion_Existe" />
+  </message>
+  <message name="Plan_Verificacion_Existe_Result">
+    <part name="parameters" element="tns:Plan_Verificacion_Existe_Result" />
+  </message>
+  <message name="Plan_Verificacion_Rechazo">
+    <part name="parameters" element="tns:Plan_Verificacion_Rechazo" />
+  </message>
+  <message name="Plan_Verificacion_Rechazo_Result">
+    <part name="parameters" element="tns:Plan_Verificacion_Rechazo_Result" />
+  </message>
+  <message name="Cambio_Rollo">
+    <part name="parameters" element="tns:Cambio_Rollo" />
+  </message>
+  <message name="Cambio_Rollo_Result">
+    <part name="parameters" element="tns:Cambio_Rollo_Result" />
+  </message>
+  <message name="Minutos_Rotura_Dia_10">
+    <part name="parameters" element="tns:Minutos_Rotura_Dia_10" />
+  </message>
+  <message name="Minutos_Rotura_Dia_10_Result">
+    <part name="parameters" element="tns:Minutos_Rotura_Dia_10_Result" />
+  </message>
+  <message name="Correo_Resumen_Turno_Prueba">
+    <part name="parameters" element="tns:Correo_Resumen_Turno_Prueba" />
+  </message>
+  <message name="Correo_Resumen_Turno_Prueba_Result">
+    <part name="parameters" element="tns:Correo_Resumen_Turno_Prueba_Result" />
+  </message>
+  <message name="Correo_Resumen_Dia_Prueba">
+    <part name="parameters" element="tns:Correo_Resumen_Dia_Prueba" />
+  </message>
+  <message name="Correo_Resumen_Dia_Prueba_Result">
+    <part name="parameters" element="tns:Correo_Resumen_Dia_Prueba_Result" />
+  </message>
+  <message name="Correo_Control_Stock">
+    <part name="parameters" element="tns:Correo_Control_Stock" />
+  </message>
+  <message name="Correo_Control_Stock_Result">
+    <part name="parameters" element="tns:Correo_Control_Stock_Result" />
+  </message>
+  <portType name="Web_Port">
+    <operation name="Capitalize">
+      <input name="Capitalize" message="tns:Capitalize" />
+      <output name="Capitalize_Result" message="tns:Capitalize_Result" />
+    </operation>
+    <operation name="Fecha_Trabajo">
+      <input name="Fecha_Trabajo" message="tns:Fecha_Trabajo" />
+      <output name="Fecha_Trabajo_Result" message="tns:Fecha_Trabajo_Result" />
+    </operation>
+    <operation name="DiarioSalida">
+      <input name="DiarioSalida" message="tns:DiarioSalida" />
+      <output name="DiarioSalida_Result" message="tns:DiarioSalida_Result" />
+    </operation>
+    <operation name="DiarioSalida2">
+      <input name="DiarioSalida2" message="tns:DiarioSalida2" />
+      <output name="DiarioSalida2_Result" message="tns:DiarioSalida2_Result" />
+    </operation>
+    <operation name="DiarioSalida3">
+      <input name="DiarioSalida3" message="tns:DiarioSalida3" />
+      <output name="DiarioSalida3_Result" message="tns:DiarioSalida3_Result" />
+    </operation>
+    <operation name="DiarioSalida4">
+      <input name="DiarioSalida4" message="tns:DiarioSalida4" />
+      <output name="DiarioSalida4_Result" message="tns:DiarioSalida4_Result" />
+    </operation>
+    <operation name="DiarioSalida5">
+      <input name="DiarioSalida5" message="tns:DiarioSalida5" />
+      <output name="DiarioSalida5_Result" message="tns:DiarioSalida5_Result" />
+    </operation>
+    <operation name="DiarioSalida6">
+      <input name="DiarioSalida6" message="tns:DiarioSalida6" />
+      <output name="DiarioSalida6_Result" message="tns:DiarioSalida6_Result" />
+    </operation>
+    <operation name="DiarioSalida7">
+      <input name="DiarioSalida7" message="tns:DiarioSalida7" />
+      <output name="DiarioSalida7_Result" message="tns:DiarioSalida7_Result" />
+    </operation>
+    <operation name="Rechazos">
+      <input name="Rechazos" message="tns:Rechazos" />
+      <output name="Rechazos_Result" message="tns:Rechazos_Result" />
+    </operation>
+    <operation name="DiarioSalida_FruverPack">
+      <input name="DiarioSalida_FruverPack" message="tns:DiarioSalida_FruverPack" />
+      <output name="DiarioSalida_FruverPack_Result" message="tns:DiarioSalida_FruverPack_Result" />
+    </operation>
+    <operation name="Verificar_No_Bobina">
+      <input name="Verificar_No_Bobina" message="tns:Verificar_No_Bobina" />
+      <output name="Verificar_No_Bobina_Result" message="tns:Verificar_No_Bobina_Result" />
+    </operation>
+    <operation name="Verificar_Peso_Bobina">
+      <input name="Verificar_Peso_Bobina" message="tns:Verificar_Peso_Bobina" />
+      <output name="Verificar_Peso_Bobina_Result" message="tns:Verificar_Peso_Bobina_Result" />
+    </operation>
+    <operation name="Verificar_No_Palet">
+      <input name="Verificar_No_Palet" message="tns:Verificar_No_Palet" />
+      <output name="Verificar_No_Palet_Result" message="tns:Verificar_No_Palet_Result" />
+    </operation>
+    <operation name="Peso_OF_Bobina">
+      <input name="Peso_OF_Bobina" message="tns:Peso_OF_Bobina" />
+      <output name="Peso_OF_Bobina_Result" message="tns:Peso_OF_Bobina_Result" />
+    </operation>
+    <operation name="XML_Peso_Bobina">
+      <input name="XML_Peso_Bobina" message="tns:XML_Peso_Bobina" />
+      <output name="XML_Peso_Bobina_Result" message="tns:XML_Peso_Bobina_Result" />
+    </operation>
+    <operation name="EliminarDiarioSalida">
+      <input name="EliminarDiarioSalida" message="tns:EliminarDiarioSalida" />
+      <output name="EliminarDiarioSalida_Result" message="tns:EliminarDiarioSalida_Result" />
+    </operation>
+    <operation name="Correo_Bascula">
+      <input name="Correo_Bascula" message="tns:Correo_Bascula" />
+      <output name="Correo_Bascula_Result" message="tns:Correo_Bascula_Result" />
+    </operation>
+    <operation name="Baja_Papel2aStock">
+      <input name="Baja_Papel2aStock" message="tns:Baja_Papel2aStock" />
+      <output name="Baja_Papel2aStock_Result" message="tns:Baja_Papel2aStock_Result" />
+    </operation>
+    <operation name="Baja_Papel2aDiario">
+      <input name="Baja_Papel2aDiario" message="tns:Baja_Papel2aDiario" />
+      <output name="Baja_Papel2aDiario_Result" message="tns:Baja_Papel2aDiario_Result" />
+    </operation>
+    <operation name="Baja_Papel2a">
+      <input name="Baja_Papel2a" message="tns:Baja_Papel2a" />
+      <output name="Baja_Papel2a_Result" message="tns:Baja_Papel2a_Result" />
+    </operation>
+    <operation name="Abrir_OP">
+      <input name="Abrir_OP" message="tns:Abrir_OP" />
+      <output name="Abrir_OP_Result" message="tns:Abrir_OP_Result" />
+    </operation>
+    <operation name="Cambiar_Palet">
+      <input name="Cambiar_Palet" message="tns:Cambiar_Palet" />
+      <output name="Cambiar_Palet_Result" message="tns:Cambiar_Palet_Result" />
+    </operation>
+    <operation name="Crear_OP">
+      <input name="Crear_OP" message="tns:Crear_OP" />
+      <output name="Crear_OP_Result" message="tns:Crear_OP_Result" />
+    </operation>
+    <operation name="Correo_Pesaje">
+      <input name="Correo_Pesaje" message="tns:Correo_Pesaje" />
+      <output name="Correo_Pesaje_Result" message="tns:Correo_Pesaje_Result" />
+    </operation>
+    <operation name="Copiar_Proyectos">
+      <input name="Copiar_Proyectos" message="tns:Copiar_Proyectos" />
+      <output name="Copiar_Proyectos_Result" message="tns:Copiar_Proyectos_Result" />
+    </operation>
+    <operation name="Correo_Resumen_Turno">
+      <input name="Correo_Resumen_Turno" message="tns:Correo_Resumen_Turno" />
+      <output name="Correo_Resumen_Turno_Result" message="tns:Correo_Resumen_Turno_Result" />
+    </operation>
+    <operation name="Formato_da161a">
+      <input name="Formato_da161a" message="tns:Formato_da161a" />
+      <output name="Formato_da161a_Result" message="tns:Formato_da161a_Result" />
+    </operation>
+    <operation name="Formato_mes">
+      <input name="Formato_mes" message="tns:Formato_mes" />
+      <output name="Formato_mes_Result" message="tns:Formato_mes_Result" />
+    </operation>
+    <operation name="Formato_anyo">
+      <input name="Formato_anyo" message="tns:Formato_anyo" />
+      <output name="Formato_anyo_Result" message="tns:Formato_anyo_Result" />
+    </operation>
+    <operation name="Correo_Resumen_Dia">
+      <input name="Correo_Resumen_Dia" message="tns:Correo_Resumen_Dia" />
+      <output name="Correo_Resumen_Dia_Result" message="tns:Correo_Resumen_Dia_Result" />
+    </operation>
+    <operation name="Correo_Diario_Mantenimiento">
+      <input name="Correo_Diario_Mantenimiento" message="tns:Correo_Diario_Mantenimiento" />
+      <output name="Correo_Diario_Mantenimiento_Result" message="tns:Correo_Diario_Mantenimiento_Result" />
+    </operation>
+    <operation name="Correo_OTM_Pendientes">
+      <input name="Correo_OTM_Pendientes" message="tns:Correo_OTM_Pendientes" />
+      <output name="Correo_OTM_Pendientes_Result" message="tns:Correo_OTM_Pendientes_Result" />
+    </operation>
+    <operation name="Minutos_Rotura_Dia">
+      <input name="Minutos_Rotura_Dia" message="tns:Minutos_Rotura_Dia" />
+      <output name="Minutos_Rotura_Dia_Result" message="tns:Minutos_Rotura_Dia_Result" />
+    </operation>
+    <operation name="Minutos_Paro_Turno">
+      <input name="Minutos_Paro_Turno" message="tns:Minutos_Paro_Turno" />
+      <output name="Minutos_Paro_Turno_Result" message="tns:Minutos_Paro_Turno_Result" />
+    </operation>
+    <operation name="Num_Paros_Turno">
+      <input name="Num_Paros_Turno" message="tns:Num_Paros_Turno" />
+      <output name="Num_Paros_Turno_Result" message="tns:Num_Paros_Turno_Result" />
+    </operation>
+    <operation name="Iniciar_Colas">
+      <input name="Iniciar_Colas" message="tns:Iniciar_Colas" />
+      <output name="Iniciar_Colas_Result" message="tns:Iniciar_Colas_Result" />
+    </operation>
+    <operation name="Crear_OP_Fecha">
+      <input name="Crear_OP_Fecha" message="tns:Crear_OP_Fecha" />
+      <output name="Crear_OP_Fecha_Result" message="tns:Crear_OP_Fecha_Result" />
+    </operation>
+    <operation name="Correo_Lab_Variantes">
+      <input name="Correo_Lab_Variantes" message="tns:Correo_Lab_Variantes" />
+      <output name="Correo_Lab_Variantes_Result" message="tns:Correo_Lab_Variantes_Result" />
+    </operation>
+    <operation name="Correo_Albaran_Lab_Prueba">
+      <input name="Correo_Albaran_Lab_Prueba" message="tns:Correo_Albaran_Lab_Prueba" />
+      <output name="Correo_Albaran_Lab_Prueba_Result" message="tns:Correo_Albaran_Lab_Prueba_Result" />
+    </operation>
+    <operation name="Calcular_peso_Bobinadora">
+      <input name="Calcular_peso_Bobinadora" message="tns:Calcular_peso_Bobinadora" />
+      <output name="Calcular_peso_Bobinadora_Result" message="tns:Calcular_peso_Bobinadora_Result" />
+    </operation>
+    <operation name="Calcular_peso_Bobinadora_dia">
+      <input name="Calcular_peso_Bobinadora_dia" message="tns:Calcular_peso_Bobinadora_dia" />
+      <output name="Calcular_peso_Bobinadora_dia_Result" message="tns:Calcular_peso_Bobinadora_dia_Result" />
+    </operation>
+    <operation name="Minutos_Paro_Turno_New">
+      <input name="Minutos_Paro_Turno_New" message="tns:Minutos_Paro_Turno_New" />
+      <output name="Minutos_Paro_Turno_New_Result" message="tns:Minutos_Paro_Turno_New_Result" />
+    </operation>
+    <operation name="Minutos_Rotura_Dia_New">
+      <input name="Minutos_Rotura_Dia_New" message="tns:Minutos_Rotura_Dia_New" />
+      <output name="Minutos_Rotura_Dia_New_Result" message="tns:Minutos_Rotura_Dia_New_Result" />
+    </operation>
+    <operation name="Parada_Fin_Turno">
+      <input name="Parada_Fin_Turno" message="tns:Parada_Fin_Turno" />
+      <output name="Parada_Fin_Turno_Result" message="tns:Parada_Fin_Turno_Result" />
+    </operation>
+    <operation name="Plan_Verificacion_Ask">
+      <input name="Plan_Verificacion_Ask" message="tns:Plan_Verificacion_Ask" />
+      <output name="Plan_Verificacion_Ask_Result" message="tns:Plan_Verificacion_Ask_Result" />
+    </operation>
+    <operation name="Plan_Verificacion_Counter">
+      <input name="Plan_Verificacion_Counter" message="tns:Plan_Verificacion_Counter" />
+      <output name="Plan_Verificacion_Counter_Result" message="tns:Plan_Verificacion_Counter_Result" />
+    </operation>
+    <operation name="Plan_Verificacion_Insertar">
+      <input name="Plan_Verificacion_Insertar" message="tns:Plan_Verificacion_Insertar" />
+      <output name="Plan_Verificacion_Insertar_Result" message="tns:Plan_Verificacion_Insertar_Result" />
+    </operation>
+    <operation name="Plan_Verificacion_Insertar2">
+      <input name="Plan_Verificacion_Insertar2" message="tns:Plan_Verificacion_Insertar2" />
+      <output name="Plan_Verificacion_Insertar2_Result" message="tns:Plan_Verificacion_Insertar2_Result" />
+    </operation>
+    <operation name="Plan_Verificacion_Borrar">
+      <input name="Plan_Verificacion_Borrar" message="tns:Plan_Verificacion_Borrar" />
+      <output name="Plan_Verificacion_Borrar_Result" message="tns:Plan_Verificacion_Borrar_Result" />
+    </operation>
+    <operation name="Plan_Verificacion_Existe">
+      <input name="Plan_Verificacion_Existe" message="tns:Plan_Verificacion_Existe" />
+      <output name="Plan_Verificacion_Existe_Result" message="tns:Plan_Verificacion_Existe_Result" />
+    </operation>
+    <operation name="Plan_Verificacion_Rechazo">
+      <input name="Plan_Verificacion_Rechazo" message="tns:Plan_Verificacion_Rechazo" />
+      <output name="Plan_Verificacion_Rechazo_Result" message="tns:Plan_Verificacion_Rechazo_Result" />
+    </operation>
+    <operation name="Cambio_Rollo">
+      <input name="Cambio_Rollo" message="tns:Cambio_Rollo" />
+      <output name="Cambio_Rollo_Result" message="tns:Cambio_Rollo_Result" />
+    </operation>
+    <operation name="Minutos_Rotura_Dia_10">
+      <input name="Minutos_Rotura_Dia_10" message="tns:Minutos_Rotura_Dia_10" />
+      <output name="Minutos_Rotura_Dia_10_Result" message="tns:Minutos_Rotura_Dia_10_Result" />
+    </operation>
+    <operation name="Correo_Resumen_Turno_Prueba">
+      <input name="Correo_Resumen_Turno_Prueba" message="tns:Correo_Resumen_Turno_Prueba" />
+      <output name="Correo_Resumen_Turno_Prueba_Result" message="tns:Correo_Resumen_Turno_Prueba_Result" />
+    </operation>
+    <operation name="Correo_Resumen_Dia_Prueba">
+      <input name="Correo_Resumen_Dia_Prueba" message="tns:Correo_Resumen_Dia_Prueba" />
+      <output name="Correo_Resumen_Dia_Prueba_Result" message="tns:Correo_Resumen_Dia_Prueba_Result" />
+    </operation>
+    <operation name="Correo_Control_Stock">
+      <input name="Correo_Control_Stock" message="tns:Correo_Control_Stock" />
+      <output name="Correo_Control_Stock_Result" message="tns:Correo_Control_Stock_Result" />
+    </operation>
+  </portType>
+  <binding name="Web_Binding" type="tns:Web_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="Capitalize">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Capitalize" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Capitalize">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Capitalize_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Fecha_Trabajo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Fecha_Trabajo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Fecha_Trabajo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Fecha_Trabajo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DiarioSalida">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:DiarioSalida" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DiarioSalida">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DiarioSalida_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DiarioSalida2">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:DiarioSalida2" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DiarioSalida2">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DiarioSalida2_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DiarioSalida3">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:DiarioSalida3" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DiarioSalida3">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DiarioSalida3_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DiarioSalida4">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:DiarioSalida4" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DiarioSalida4">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DiarioSalida4_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DiarioSalida5">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:DiarioSalida5" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DiarioSalida5">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DiarioSalida5_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DiarioSalida6">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:DiarioSalida6" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DiarioSalida6">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DiarioSalida6_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DiarioSalida7">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:DiarioSalida7" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DiarioSalida7">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DiarioSalida7_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Rechazos">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Rechazos" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Rechazos">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Rechazos_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="DiarioSalida_FruverPack">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:DiarioSalida_FruverPack" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DiarioSalida_FruverPack">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DiarioSalida_FruverPack_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Verificar_No_Bobina">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Verificar_No_Bobina" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Verificar_No_Bobina">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Verificar_No_Bobina_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Verificar_Peso_Bobina">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Verificar_Peso_Bobina" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Verificar_Peso_Bobina">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Verificar_Peso_Bobina_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Verificar_No_Palet">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Verificar_No_Palet" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Verificar_No_Palet">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Verificar_No_Palet_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Peso_OF_Bobina">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Peso_OF_Bobina" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Peso_OF_Bobina">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Peso_OF_Bobina_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="XML_Peso_Bobina">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:XML_Peso_Bobina" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="XML_Peso_Bobina">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="XML_Peso_Bobina_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="EliminarDiarioSalida">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:EliminarDiarioSalida" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="EliminarDiarioSalida">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="EliminarDiarioSalida_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Bascula">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Bascula" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Bascula">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Bascula_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Baja_Papel2aStock">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Baja_Papel2aStock" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Baja_Papel2aStock">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Baja_Papel2aStock_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Baja_Papel2aDiario">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Baja_Papel2aDiario" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Baja_Papel2aDiario">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Baja_Papel2aDiario_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Baja_Papel2a">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Baja_Papel2a" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Baja_Papel2a">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Baja_Papel2a_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Abrir_OP">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Abrir_OP" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Abrir_OP">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Abrir_OP_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Cambiar_Palet">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Cambiar_Palet" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Cambiar_Palet">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Cambiar_Palet_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Crear_OP">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Crear_OP" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Crear_OP">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Crear_OP_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Pesaje">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Pesaje" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Pesaje">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Pesaje_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Copiar_Proyectos">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Copiar_Proyectos" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Copiar_Proyectos">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Copiar_Proyectos_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Resumen_Turno">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Resumen_Turno" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Resumen_Turno">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Resumen_Turno_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Formato_da161a">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Formato_da161a" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Formato_da161a">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Formato_da161a_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Formato_mes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Formato_mes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Formato_mes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Formato_mes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Formato_anyo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Formato_anyo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Formato_anyo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Formato_anyo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Resumen_Dia">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Resumen_Dia" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Resumen_Dia">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Resumen_Dia_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Diario_Mantenimiento">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Diario_Mantenimiento" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Diario_Mantenimiento">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Diario_Mantenimiento_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_OTM_Pendientes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_OTM_Pendientes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_OTM_Pendientes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_OTM_Pendientes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Minutos_Rotura_Dia">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Minutos_Rotura_Dia" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Minutos_Rotura_Dia">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Minutos_Rotura_Dia_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Minutos_Paro_Turno">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Minutos_Paro_Turno" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Minutos_Paro_Turno">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Minutos_Paro_Turno_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Num_Paros_Turno">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Num_Paros_Turno" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Num_Paros_Turno">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Num_Paros_Turno_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Iniciar_Colas">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Iniciar_Colas" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Iniciar_Colas">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Iniciar_Colas_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Crear_OP_Fecha">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Crear_OP_Fecha" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Crear_OP_Fecha">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Crear_OP_Fecha_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Lab_Variantes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Lab_Variantes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Lab_Variantes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Lab_Variantes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Albaran_Lab_Prueba">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Albaran_Lab_Prueba" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Albaran_Lab_Prueba">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Albaran_Lab_Prueba_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Calcular_peso_Bobinadora">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Calcular_peso_Bobinadora" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Calcular_peso_Bobinadora">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Calcular_peso_Bobinadora_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Calcular_peso_Bobinadora_dia">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Calcular_peso_Bobinadora_dia" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Calcular_peso_Bobinadora_dia">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Calcular_peso_Bobinadora_dia_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Minutos_Paro_Turno_New">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Minutos_Paro_Turno_New" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Minutos_Paro_Turno_New">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Minutos_Paro_Turno_New_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Minutos_Rotura_Dia_New">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Minutos_Rotura_Dia_New" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Minutos_Rotura_Dia_New">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Minutos_Rotura_Dia_New_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Parada_Fin_Turno">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Parada_Fin_Turno" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Parada_Fin_Turno">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Parada_Fin_Turno_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Plan_Verificacion_Ask">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Plan_Verificacion_Ask" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Plan_Verificacion_Ask">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Plan_Verificacion_Ask_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Plan_Verificacion_Counter">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Plan_Verificacion_Counter" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Plan_Verificacion_Counter">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Plan_Verificacion_Counter_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Plan_Verificacion_Insertar">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Plan_Verificacion_Insertar" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Plan_Verificacion_Insertar">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Plan_Verificacion_Insertar_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Plan_Verificacion_Insertar2">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Plan_Verificacion_Insertar2" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Plan_Verificacion_Insertar2">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Plan_Verificacion_Insertar2_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Plan_Verificacion_Borrar">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Plan_Verificacion_Borrar" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Plan_Verificacion_Borrar">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Plan_Verificacion_Borrar_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Plan_Verificacion_Existe">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Plan_Verificacion_Existe" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Plan_Verificacion_Existe">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Plan_Verificacion_Existe_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Plan_Verificacion_Rechazo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Plan_Verificacion_Rechazo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Plan_Verificacion_Rechazo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Plan_Verificacion_Rechazo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Cambio_Rollo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Cambio_Rollo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Cambio_Rollo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Cambio_Rollo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Minutos_Rotura_Dia_10">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Minutos_Rotura_Dia_10" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Minutos_Rotura_Dia_10">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Minutos_Rotura_Dia_10_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Resumen_Turno_Prueba">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Resumen_Turno_Prueba" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Resumen_Turno_Prueba">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Resumen_Turno_Prueba_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Resumen_Dia_Prueba">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Resumen_Dia_Prueba" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Resumen_Dia_Prueba">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Resumen_Dia_Prueba_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Correo_Control_Stock">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Web:Correo_Control_Stock" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Correo_Control_Stock">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Correo_Control_Stock_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Web">
+    <port name="Web_Port" binding="tns:Web_Binding">
+      <address location="http://192.168.20.5:7047/DynamicsNAV71/WS/Papertech/Codeunit/Web" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

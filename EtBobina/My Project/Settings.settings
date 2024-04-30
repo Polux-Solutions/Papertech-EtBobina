@@ -1,0 +1,44 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DynamicsNAV5ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.20.6;Initial Catalog=DynamicsNAV5;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.20.6;Initial Catalog=DynamicsNAV5;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="EtBobina_WebRef_ServiciosWeb" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://192.168.3.130:7047/DynamicsNAV71/WS/CRONUS%20Espa%C3%B1a%20S.A./Codeunit/ServiciosWeb</Value>
+    </Setting>
+    <Setting Name="PapertechConex" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.3.130;Initial Catalog=Papertech2013;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.3.130;Initial Catalog=Papertech2013;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="ReportingNAVConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.3.130;Initial Catalog=ReportingNAV;Persist Security Info=True;User ID=sa;Password=_venus13&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.3.130;Initial Catalog=ReportingNAV;Persist Security Info=True;User ID=sa;Password=_venus13</Value>
+    </Setting>
+    <Setting Name="EtBobina_WebReference_ServiciosWeb" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.20.5:7047/DynamicsNAV71/WS/Papertech/Codeunit/Web</Value>
+    </Setting>
+    <Setting Name="ReportingNAVConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.20.5;Initial Catalog=ReportingNAV;Persist Security Info=True;User ID=sa;Password=Nav2013R2&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.20.5;Initial Catalog=ReportingNAV;Persist Security Info=True;User ID=sa;Password=Nav2013R2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
