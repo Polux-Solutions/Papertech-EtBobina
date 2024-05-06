@@ -441,9 +441,9 @@ Public Class Lienzo
         Pt.X = 0
         Pt.Y = 92
         If (Etiqueta.Ancho < 999) And (Etiqueta.Ancho Mod 2 = 0) Then
-            e.Graphics.DrawString(FormatoAncho(Etiqueta.Ancho) + "/" + Etiqueta.Rodajas.ToString("00"), ftHelvetica72, Brushes.Black, Pt)
+            e.Graphics.DrawString(FormatoAncho(Etiqueta.Ancho) + "/" + Format(Etiqueta.Rodajas, "00"), ftHelvetica72, Brushes.Black, Pt)
         Else
-            e.Graphics.DrawString(FormatoAncho(Etiqueta.Ancho) + "/" + Etiqueta.Rodajas.ToString("00"), ftHelvetica64, Brushes.Black, Pt)
+            e.Graphics.DrawString(FormatoAncho(Etiqueta.Ancho) + "/" + Format(Etiqueta.Rodajas, "00"), ftHelvetica64, Brushes.Black, Pt)
         End If
 
 

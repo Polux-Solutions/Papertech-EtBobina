@@ -752,7 +752,7 @@ Public Class Plan
             Etiqueta.CambioRollo = True
             Etiqueta.Rollo_AnchoRodaja = 0
             Etiqueta.Rollo_AnchoMandril = 0
-            Etiqueta.Rodajas = True
+            Etiqueta.Rollo_RodajasDuras = True
         End If
 
         oRead.Close()
