@@ -51,6 +51,8 @@ Namespace WebReference
         
         Private RechazosOperationCompleted As System.Threading.SendOrPostCallback
         
+        Private ScrapOperationCompleted As System.Threading.SendOrPostCallback
+        
         Private DiarioSalida_FruverPackOperationCompleted As System.Threading.SendOrPostCallback
         
         Private Verificar_No_BobinaOperationCompleted As System.Threading.SendOrPostCallback
@@ -212,6 +214,9 @@ Namespace WebReference
         
         '''<remarks/>
         Public Event RechazosCompleted As RechazosCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ScrapCompleted As ScrapCompletedEventHandler
         
         '''<remarks/>
         Public Event DiarioSalida_FruverPackCompleted As DiarioSalida_FruverPackCompletedEventHandler
@@ -839,6 +844,32 @@ Namespace WebReference
             If (Not (Me.RechazosCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
                 RaiseEvent RechazosCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Web:Scrap", RequestNamespace:="urn:microsoft-dynamics-schemas/codeunit/Web", ResponseElementName:="Scrap_Result", ResponseNamespace:="urn:microsoft-dynamics-schemas/codeunit/Web", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub Scrap(ByVal _OP As String, ByVal _Bobina As Integer, ByVal _ScrapCode As String, ByVal _Cantidad As Decimal)
+            Me.Invoke("Scrap", New Object() {_OP, _Bobina, _ScrapCode, _Cantidad})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ScrapAsync(ByVal _OP As String, ByVal _Bobina As Integer, ByVal _ScrapCode As String, ByVal _Cantidad As Decimal)
+            Me.ScrapAsync(_OP, _Bobina, _ScrapCode, _Cantidad, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ScrapAsync(ByVal _OP As String, ByVal _Bobina As Integer, ByVal _ScrapCode As String, ByVal _Cantidad As Decimal, ByVal userState As Object)
+            If (Me.ScrapOperationCompleted Is Nothing) Then
+                Me.ScrapOperationCompleted = AddressOf Me.OnScrapOperationCompleted
+            End If
+            Me.InvokeAsync("Scrap", New Object() {_OP, _Bobina, _ScrapCode, _Cantidad}, Me.ScrapOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnScrapOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ScrapCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ScrapCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -2244,6 +2275,10 @@ Namespace WebReference
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")>  _
     Public Delegate Sub RechazosCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")>  _
+    Public Delegate Sub ScrapCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")>  _

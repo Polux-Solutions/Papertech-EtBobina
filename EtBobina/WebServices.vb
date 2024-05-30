@@ -63,12 +63,31 @@ Module WebServices
 
             MyWs.Rechazos(xRechazo, xBobina, xRodajas, xPesoEstimado)
         Catch ex As Exception
-            Log("Error en los servicios WEB Fecha_Trabajo: " + ex.Message)
+            Log("Error en los servicios WEB Rechazo: " + ex.Message)
             Insertar_Rechazo = False
         End Try
 
         MyWs.Dispose()
     End Function
+
+    Public Function Scrap(xOP As String, xBobina As Integer, xCode As String, xKG As Single) As Boolean
+        Dim MyWs As New WebReference.Web
+
+        Scrap = True
+
+        Try
+            MyWs.Url = Datos.ServidorWeb
+            MyWs.Credentials = New System.Net.NetworkCredential(Datos.UsuarioWeb, Datos.PasswordWeb, Datos.DominioWeb)
+
+            MyWs.Scrap(xOP, xBobina, xCode, xKG)
+        Catch ex As Exception
+            Log("Error en los servicios WEB Scrap: " + ex.Message)
+            Scrap = False
+        End Try
+
+        MyWs.Dispose()
+    End Function
+
 
     Public Function Verificar_No_Bobina(xOP As String, xBobina As Integer) As Boolean
         Dim MyWs As New WebReference.Web
@@ -96,7 +115,7 @@ Module WebServices
 
             Peso = MyWs.Peso_OF_Bobina(xOP, xBobina, False, Year(Now))
         Catch ex As Exception
-            Log("Error en los servicios WEB Verificar No Bobina: " + ex.Message)
+            Log("Error en los servicios WEB Peso bobina: " + ex.Message)
         End Try
 
         MsgBox(Peso.ToString)
@@ -119,7 +138,7 @@ Module WebServices
                 sw.Write(MyWs.XML_Peso_Bobina(xOP, xBobina))
             End Using
         Catch ex As Exception
-            Log("Error Llamada WebService XML_Peso_Bobina: " + ex.Message)
+            Log("Error Llamada WebService Detalle_Peso_OP: " + ex.Message)
             Detalle_Peso_OP = False
         End Try
 
@@ -151,7 +170,7 @@ Module WebServices
 
             Verificar_Peso_Bobina = MyWs.Verificar_Peso_Bobina(xOP, xBobina, xPeso)
         Catch ex As Exception
-            Log("Error en los servicios WEB Verificar No Bobina: " + ex.Message)
+            Log("Error en los servicios WEB Verificar_Peso_Bobina: " + ex.Message)
         End Try
 
         MyWs.Dispose()

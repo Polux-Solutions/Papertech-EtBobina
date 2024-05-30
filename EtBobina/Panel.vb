@@ -41,6 +41,8 @@ Public Class Panel
                 Me.grDatos.Visible = False
                 Me.grOF.Visible = False
                 Me.grRepetir.Visible = False
+                Me.Scrap.Visible = False
+                Me.MenuRechazo.Visible = False
                 Me.Salir.Visible = True
                 Me.txEtiqPalet.Text = "1"
                 Me.txMetrosPalet.Text = ""
@@ -106,6 +108,8 @@ Public Class Panel
 
                 Me.grDatos.Visible = False
                 Me.Salir.Visible = True
+                Me.Scrap.Visible = False
+                Me.MenuRechazo.Visible = False
 
                 Me.txOF.Text = ""
                 Me.txOF.Select()
@@ -153,6 +157,8 @@ Public Class Panel
                 Me.grRepetir.Visible = True
                 Me.grRepetir.Enabled = True
                 Me.OK.Visible = False
+                Me.Scrap.Visible = True
+                Me.MenuRechazo.Visible = True
 
                 Me.Manual.Visible = False
                 Me.grDatos.Visible = True
@@ -435,9 +441,12 @@ Public Class Panel
     End Function
 
     Private Sub DatosSalir_Click_(sender As Object, e As EventArgs) Handles DatosSalir.Click
-        Status_Quo(1)
+        Cancelar()
     End Sub
 
+    Private Sub Cancelar()
+        Status_Quo(1)
+    End Sub
 
     Private Sub DatosOK_Click(sender As Object, e As EventArgs) Handles DatosOK.Click
         Dim NoOrden As String
@@ -1000,11 +1009,19 @@ Public Class Panel
         Lienzo.Imprimir_Etiqueta_QR()
     End Sub
 
-    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
+
+    Private Sub Rechazar()
+        Rechazo.OP.Text = Me.txOF.Text
+        Rechazo.Bobina.Text = Me.txBobina.Text
+        Rechazo.ShowDialog()
+        Cancelar()
+    End Sub
+
+    Private Sub Scrap_Click(sender As Object, e As EventArgs) Handles Scrap.Click
         Rechazar()
     End Sub
 
-    Private Sub Rechazar()
-        Rechazo.ShowDialog()
+    Private Sub MenuRechazo_Click(sender As Object, e As EventArgs) Handles MenuRechazo.Click
+        Rechazar()
     End Sub
 End Class

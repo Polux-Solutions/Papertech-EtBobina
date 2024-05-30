@@ -80,6 +80,8 @@ Partial Class Panel
         Me.MenuSinPalet = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuCambioTurno = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.MenuRechazo = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuSalir = New System.Windows.Forms.ToolStripMenuItem()
@@ -109,6 +111,7 @@ Partial Class Panel
         Me.etMasFecha = New System.Windows.Forms.Button()
         Me.txFechaTrabajo = New System.Windows.Forms.TextBox()
         Me.grRepetir = New System.Windows.Forms.GroupBox()
+        Me.Scrap = New System.Windows.Forms.Button()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.grOpciones = New System.Windows.Forms.GroupBox()
         Me.chCalibre = New System.Windows.Forms.CheckBox()
@@ -118,8 +121,6 @@ Partial Class Panel
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txBobina = New System.Windows.Forms.TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.grTurno.SuspendLayout()
         Me.grOF.SuspendLayout()
         Me.grDatos.SuspendLayout()
@@ -625,7 +626,7 @@ Partial Class Panel
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuModoTest, Me.ToolStripSeparator8, Me.MenuConexDatos, Me.MenuConexNAV, Me.ToolStripSeparator2, Me.MenuAbrir, Me.ToolStripSeparator1, Me.MenuSinPalet, Me.ToolStripSeparator4, Me.MenuCambioTurno, Me.ToolStripSeparator7, Me.ToolStripMenuItem5, Me.ToolStripSeparator3, Me.ToolStripMenuItem4, Me.MenuSalir, Me.EnviarOPTESTToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuModoTest, Me.ToolStripSeparator8, Me.MenuConexDatos, Me.MenuConexNAV, Me.ToolStripSeparator2, Me.MenuAbrir, Me.ToolStripSeparator1, Me.MenuSinPalet, Me.ToolStripSeparator4, Me.MenuCambioTurno, Me.ToolStripSeparator7, Me.MenuRechazo, Me.ToolStripSeparator3, Me.ToolStripMenuItem4, Me.MenuSalir, Me.EnviarOPTESTToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(67, 24)
         Me.ToolStripMenuItem1.Text = "Acciones"
@@ -685,6 +686,18 @@ Partial Class Panel
         Me.MenuCambioTurno.Name = "MenuCambioTurno"
         Me.MenuCambioTurno.Size = New System.Drawing.Size(196, 22)
         Me.MenuCambioTurno.Text = "Cambiar Turno"
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(193, 6)
+        '
+        'MenuRechazo
+        '
+        Me.MenuRechazo.Name = "MenuRechazo"
+        Me.MenuRechazo.Size = New System.Drawing.Size(196, 22)
+        Me.MenuRechazo.Text = "Rechazo"
+        Me.MenuRechazo.Visible = False
         '
         'ToolStripSeparator3
         '
@@ -913,6 +926,7 @@ Partial Class Panel
         '
         'grRepetir
         '
+        Me.grRepetir.Controls.Add(Me.Scrap)
         Me.grRepetir.Controls.Add(Me.DateTimePicker2)
         Me.grRepetir.Controls.Add(Me.Manual)
         Me.grRepetir.Controls.Add(Me.OF_2)
@@ -927,6 +941,21 @@ Partial Class Panel
         Me.grRepetir.Size = New System.Drawing.Size(319, 100)
         Me.grRepetir.TabIndex = 22
         Me.grRepetir.TabStop = False
+        '
+        'Scrap
+        '
+        Me.Scrap.BackgroundImage = CType(resources.GetObject("Scrap.BackgroundImage"), System.Drawing.Image)
+        Me.Scrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Scrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Scrap.ForeColor = System.Drawing.Color.DarkTurquoise
+        Me.Scrap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Scrap.Location = New System.Drawing.Point(226, 15)
+        Me.Scrap.Name = "Scrap"
+        Me.Scrap.Size = New System.Drawing.Size(86, 79)
+        Me.Scrap.TabIndex = 22
+        Me.Scrap.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Scrap.UseVisualStyleBackColor = True
+        Me.Scrap.Visible = False
         '
         'DateTimePicker2
         '
@@ -1014,17 +1043,6 @@ Partial Class Panel
         '
         'Timer1
         '
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(196, 22)
-        Me.ToolStripMenuItem5.Text = "Rechazo"
-        '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(193, 6)
         '
         'Panel
         '
@@ -1172,5 +1190,6 @@ Partial Class Panel
     Friend WithEvents ToolStripSeparator9 As ToolStripSeparator
     Friend WithEvents ImprimirQRPruebasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
-    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
+    Friend WithEvents MenuRechazo As ToolStripMenuItem
+    Friend WithEvents Scrap As Button
 End Class
