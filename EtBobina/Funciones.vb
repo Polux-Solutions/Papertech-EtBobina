@@ -18,15 +18,12 @@ Module Funciones
         Datos.FechaTrabajo = CDate("August 27, 2003")
         Datos.ActualizarPalet = True
         Try
-            Datos.Servidor_Prod = Config.GetValue("SERVER-SQL", GetType(System.String)).ToString
-            Datos.BD_Prod = Config.GetValue("BD-SQL", GetType(System.String)).ToString
-            Datos.Empresa_Prod = Config.GetValue("EMPRESA", GetType(System.String)).ToString
-            Datos.Usuario_Prod = Funciones.Decrypt("_venus13", Config.GetValue("USUARIO-SQL", GetType(System.String)).ToString)
-            Datos.Password_Prod = Funciones.Decrypt("_venus13", Config.GetValue("CONTRASEÑA-SQL", GetType(System.String)).ToString)
+            Datos.Servidor_Prod = Decrypt("_Avestruz19", Config.GetValue("SERVER-SQL", GetType(System.String)).ToString)
             Datos.ServidorWeb_Prod = Config.GetValue("SERVER-WEB", GetType(System.String)).ToString
-            Datos.UsuarioWeb_Prod = Funciones.Decrypt("_venus13", Config.GetValue("USUARIO-WEB", GetType(System.String)).ToString)
-            Datos.PasswordWeb_Prod = Funciones.Decrypt("_venus13", Config.GetValue("CONTRASEÑA-WEB", GetType(System.String)).ToString)
-            Datos.DominioWeb_Prod = Funciones.Decrypt("_venus13", Config.GetValue("DOMINIO-WEB", GetType(System.String)).ToString)
+            Datos.BD_Prod = Decrypt("_Avestruz19", Config.GetValue("BD-SQL", GetType(System.String)).ToString)
+            Datos.Empresa_Prod = Decrypt("_Avestruz19", Config.GetValue("EMPRESA", GetType(System.String)).ToString)
+            Datos.Usuario_Prod = Decrypt("_Avestruz19", Config.GetValue("USUARIO-SQL", GetType(System.String)).ToString)
+            Datos.Password_Prod = Decrypt("_Avestruz19", Config.GetValue("CONTRASEÑA-SQL", GetType(System.String)).ToString)
             Datos.ServidorReporting_Prod = Config.GetValue("SERVER-REPORTING", GetType(System.String)).ToString
             Datos.BDReporting_Prod = Config.GetValue("BD-REPORTING", GetType(System.String)).ToString
             Datos.UsuarioReporting_Prod = Funciones.Decrypt("_venus13", Config.GetValue("USUARIO-REPORTING", GetType(System.String)).ToString)
@@ -37,9 +34,6 @@ Module Funciones
             Datos.Usuario_Test = Funciones.Decrypt("_venus13", Config.GetValue("USUARIO-SQL-TEST", GetType(System.String)).ToString)
             Datos.Password_Test = Funciones.Decrypt("_venus13", Config.GetValue("CONTRASEÑA-SQL-TEST", GetType(System.String)).ToString)
             Datos.ServidorWeb_Test = Config.GetValue("SERVER-WEB-TEST", GetType(System.String)).ToString
-            Datos.UsuarioWeb_Test = Funciones.Decrypt("_venus13", Config.GetValue("USUARIO-WEB-TEST", GetType(System.String)).ToString)
-            Datos.PasswordWeb_Test = Funciones.Decrypt("_venus13", Config.GetValue("CONTRASEÑA-WEB-TEST", GetType(System.String)).ToString)
-            Datos.DominioWeb_Test = Funciones.Decrypt("_venus13", Config.GetValue("DOMINIO-WEB-TEST", GetType(System.String)).ToString)
             Datos.ServidorReporting_Test = Config.GetValue("SERVER-REPORTING-TEST", GetType(System.String)).ToString
             Datos.BDReporting_Test = Config.GetValue("BD-REPORTING-TEST", GetType(System.String)).ToString
             Datos.UsuarioReporting_Test = Funciones.Decrypt("_venus13", Config.GetValue("USUARIO-REPORTING-TEST", GetType(System.String)).ToString)
@@ -60,6 +54,50 @@ Module Funciones
         End Try
     End Function
 
+
+    Public Function Extraer_Usuario_Web() As Boolean
+        Dim olAdapter As SqlClient.SqlDataAdapter
+        Dim ds As DataSet = Nothing
+
+        Extraer_Usuario_Web = Abrir_BBDD()
+
+        If Extraer_Usuario_Web Then
+            Try
+                Dim tt As String = $"SELECT [Dominio WebService], [Usuario WebService], [Password WebService] FROM [dbo].[{Datos.Empresa}$Company Information]"
+                olAdapter = New SqlClient.SqlDataAdapter(tt, Datos.Conex)
+
+                ds = New DataSet
+                olAdapter.Fill(ds, "Empresa")
+                olAdapter.Dispose()
+            Catch ex As Exception
+                MsgBox("Error datos operarios " & ex.Message)
+                Log("Error datos operarios " & ex.Message)
+                Extraer_Usuario_Web = False
+            End Try
+        End If
+
+
+        If Extraer_Usuario_Web And ds.Tables(0).Rows.Count = 0 Then
+            MsgBox("No Existe resgistro en Información Empresa")
+            Log("No Existe resgistro en Información Empresa")
+            Extraer_Usuario_Web = False
+        End If
+
+        If Extraer_Usuario_Web Then
+            Datos.DominioWeb_Prod = ds.Tables(0).Rows(0).Item("Dominio WebService")
+            Datos.UsuarioWeb_Prod = ds.Tables(0).Rows(0).Item("Usuario WebService")
+            Datos.PasswordWeb_Prod = ds.Tables(0).Rows(0).Item("Password WebService")
+
+            If (Datos.DominioWeb_Prod = String.Empty) Or (Datos.UsuarioWeb_Prod = String.Empty) Or (Datos.PasswordWeb_Prod = String.Empty) Then
+                MsgBox("No Se han indicado los datos de Cominio, Usuario, Password  -Información Empresa-")
+                Log("No Se han indicado los datos de Cominio, Usuario, Password  -Información Empresa-")
+                Extraer_Usuario_Web = False
+            End If
+        End If
+
+        If Extraer_Usuario_Web Then Extraer_Usuario_Web = Cerrar_BBDD()
+    End Function
+
     Public Sub Parametros_Utilizar()
         If Datos.ModoTest Then
             Datos.Servidor = Datos.Servidor_Test
@@ -67,7 +105,7 @@ Module Funciones
             Datos.Empresa = Datos.Empresa_Test
             Datos.Usuario = Datos.Usuario_Test
             Datos.Password = Datos.Password_Test
-            Datos.ServidorWeb = Datos.ServidorWeb_Test
+            Datos.ServidorWeb = Datos.Servidor_Test
             Datos.UsuarioWeb = Datos.UsuarioWeb_Test
             Datos.PasswordWeb = Datos.PasswordWeb_Test
             Datos.DominioWeb = Datos.DominioWeb_Test

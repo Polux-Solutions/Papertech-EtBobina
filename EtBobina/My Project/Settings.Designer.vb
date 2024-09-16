@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -56,22 +56,22 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://192.168.3.130:7047/DynamicsNAV71/WS/CRONUS%20Espa%C3%B1a%20S.A./Codeunit/S"& _ 
+            "erviciosWeb")>  _
+        Public ReadOnly Property EtBobina_WebRef_ServiciosWeb() As String
+            Get
+                Return CType(Me("EtBobina_WebRef_ServiciosWeb"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.20.6;Initial Catalog=DynamicsNAV5;Persist Security Info=True;"& _ 
             "User ID=sa")>  _
         Public ReadOnly Property DynamicsNAV5ConnectionString() As String
             Get
                 Return CType(Me("DynamicsNAV5ConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://192.168.3.130:7047/DynamicsNAV71/WS/CRONUS%20Espa%C3%B1a%20S.A./Codeunit/S"& _ 
-            "erviciosWeb")>  _
-        Public ReadOnly Property EtBobina_WebRef_ServiciosWeb() As String
-            Get
-                Return CType(Me("EtBobina_WebRef_ServiciosWeb"),String)
             End Get
         End Property
         
@@ -99,22 +99,22 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://192.168.20.5:7047/DynamicsNAV71/WS/Papertech/Codeunit/Web")>  _
-        Public ReadOnly Property EtBobina_WebReference_ServiciosWeb() As String
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=EUSPTUDNAV-P001.sonoco.com;Initial Catalog=ReportingNAV;Persist Secur"& _ 
+            "ity Info=True;User ID=sa;Password=Nav2013R2")>  _
+        Public ReadOnly Property ReportingNAVConnectionString1() As String
             Get
-                Return CType(Me("EtBobina_WebReference_ServiciosWeb"),String)
+                Return CType(Me("ReportingNAVConnectionString1"),String)
             End Get
         End Property
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.20.5;Initial Catalog=ReportingNAV;Persist Security Info=True;"& _ 
-            "User ID=sa;Password=Nav2013R2")>  _
-        Public ReadOnly Property ReportingNAVConnectionString1() As String
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://EUSPTUDNAV-P001.sonoco.com:7047/DynamicsNAV71/WS/Papertech/Codeunit/Web")>  _
+        Public ReadOnly Property EtBobina_WebReference_ServiciosWeb() As String
             Get
-                Return CType(Me("ReportingNAVConnectionString1"),String)
+                Return CType(Me("EtBobina_WebReference_ServiciosWeb"),String)
             End Get
         End Property
     End Class

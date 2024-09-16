@@ -141,7 +141,7 @@ Partial Class Panel
         Me.grTurno.Controls.Add(Me.turnoC)
         Me.grTurno.Controls.Add(Me.turnoB)
         Me.grTurno.Controls.Add(Me.turnoA)
-        Me.grTurno.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grTurno.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grTurno.Location = New System.Drawing.Point(9, 27)
         Me.grTurno.Name = "grTurno"
         Me.grTurno.Size = New System.Drawing.Size(303, 59)
@@ -152,10 +152,10 @@ Partial Class Panel
         'turnoE
         '
         Me.turnoE.AutoSize = True
-        Me.turnoE.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.turnoE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.turnoE.Location = New System.Drawing.Point(236, 23)
         Me.turnoE.Name = "turnoE"
-        Me.turnoE.Size = New System.Drawing.Size(39, 23)
+        Me.turnoE.Size = New System.Drawing.Size(39, 24)
         Me.turnoE.TabIndex = 14
         Me.turnoE.Text = "E"
         Me.turnoE.UseVisualStyleBackColor = True
@@ -163,10 +163,10 @@ Partial Class Panel
         'turnoD
         '
         Me.turnoD.AutoSize = True
-        Me.turnoD.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.turnoD.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.turnoD.Location = New System.Drawing.Point(179, 23)
         Me.turnoD.Name = "turnoD"
-        Me.turnoD.Size = New System.Drawing.Size(39, 23)
+        Me.turnoD.Size = New System.Drawing.Size(40, 24)
         Me.turnoD.TabIndex = 13
         Me.turnoD.Text = "D"
         Me.turnoD.UseVisualStyleBackColor = True
@@ -174,10 +174,10 @@ Partial Class Panel
         'turnoC
         '
         Me.turnoC.AutoSize = True
-        Me.turnoC.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.turnoC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.turnoC.Location = New System.Drawing.Point(120, 23)
         Me.turnoC.Name = "turnoC"
-        Me.turnoC.Size = New System.Drawing.Size(39, 23)
+        Me.turnoC.Size = New System.Drawing.Size(39, 24)
         Me.turnoC.TabIndex = 12
         Me.turnoC.Text = "C"
         Me.turnoC.UseVisualStyleBackColor = True
@@ -185,10 +185,10 @@ Partial Class Panel
         'turnoB
         '
         Me.turnoB.AutoSize = True
-        Me.turnoB.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.turnoB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.turnoB.Location = New System.Drawing.Point(62, 23)
         Me.turnoB.Name = "turnoB"
-        Me.turnoB.Size = New System.Drawing.Size(39, 23)
+        Me.turnoB.Size = New System.Drawing.Size(39, 24)
         Me.turnoB.TabIndex = 11
         Me.turnoB.Text = "B"
         Me.turnoB.UseVisualStyleBackColor = True
@@ -196,20 +196,21 @@ Partial Class Panel
         'turnoA
         '
         Me.turnoA.AutoSize = True
-        Me.turnoA.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.turnoA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.turnoA.Location = New System.Drawing.Point(11, 23)
         Me.turnoA.Name = "turnoA"
-        Me.turnoA.Size = New System.Drawing.Size(39, 23)
+        Me.turnoA.Size = New System.Drawing.Size(39, 24)
         Me.turnoA.TabIndex = 10
         Me.turnoA.Text = "A"
         Me.turnoA.UseVisualStyleBackColor = True
         '
         'grOF
         '
+        Me.grOF.Controls.Add(Me.Scrap)
         Me.grOF.Controls.Add(Me.DateTimePicker1)
         Me.grOF.Controls.Add(Me.OK)
         Me.grOF.Controls.Add(Me.txOF)
-        Me.grOF.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grOF.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grOF.Location = New System.Drawing.Point(149, 92)
         Me.grOF.Name = "grOF"
         Me.grOF.Size = New System.Drawing.Size(319, 66)
@@ -221,13 +222,13 @@ Partial Class Panel
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(54, -26)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 26)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 24)
         Me.DateTimePicker1.TabIndex = 21
         '
         'OK
         '
-        Me.OK.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OK.Location = New System.Drawing.Point(242, 26)
+        Me.OK.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OK.Location = New System.Drawing.Point(195, 25)
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(71, 37)
         Me.OK.TabIndex = 8
@@ -236,10 +237,10 @@ Partial Class Panel
         '
         'txOF
         '
-        Me.txOF.Font = New System.Drawing.Font("Century", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txOF.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txOF.Location = New System.Drawing.Point(7, 26)
         Me.txOF.Name = "txOF"
-        Me.txOF.Size = New System.Drawing.Size(204, 36)
+        Me.txOF.Size = New System.Drawing.Size(181, 35)
         Me.txOF.TabIndex = 3
         '
         'Manual
@@ -258,7 +259,7 @@ Partial Class Panel
         '
         'OF_6
         '
-        Me.OF_6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OF_6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OF_6.Location = New System.Drawing.Point(190, 68)
         Me.OF_6.Name = "OF_6"
         Me.OF_6.Size = New System.Drawing.Size(123, 27)
@@ -268,7 +269,7 @@ Partial Class Panel
         '
         'OF_5
         '
-        Me.OF_5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OF_5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OF_5.Location = New System.Drawing.Point(69, 67)
         Me.OF_5.Name = "OF_5"
         Me.OF_5.Size = New System.Drawing.Size(115, 27)
@@ -278,7 +279,7 @@ Partial Class Panel
         '
         'OF_4
         '
-        Me.OF_4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OF_4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OF_4.Location = New System.Drawing.Point(190, 41)
         Me.OF_4.Name = "OF_4"
         Me.OF_4.Size = New System.Drawing.Size(123, 26)
@@ -288,7 +289,7 @@ Partial Class Panel
         '
         'OF_3
         '
-        Me.OF_3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OF_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OF_3.Location = New System.Drawing.Point(69, 40)
         Me.OF_3.Name = "OF_3"
         Me.OF_3.Size = New System.Drawing.Size(115, 26)
@@ -298,7 +299,7 @@ Partial Class Panel
         '
         'OF_2
         '
-        Me.OF_2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OF_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OF_2.Location = New System.Drawing.Point(190, 16)
         Me.OF_2.Name = "OF_2"
         Me.OF_2.Size = New System.Drawing.Size(123, 24)
@@ -309,7 +310,7 @@ Partial Class Panel
         'OF_1
         '
         Me.OF_1.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.OF_1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OF_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OF_1.Location = New System.Drawing.Point(69, 15)
         Me.OF_1.Name = "OF_1"
         Me.OF_1.Size = New System.Drawing.Size(115, 24)
@@ -338,7 +339,7 @@ Partial Class Panel
         Me.grDatos.Controls.Add(Me.Label5)
         Me.grDatos.Controls.Add(Me.txRodajas)
         Me.grDatos.Controls.Add(Me.Label3)
-        Me.grDatos.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grDatos.Location = New System.Drawing.Point(12, 356)
         Me.grDatos.Name = "grDatos"
         Me.grDatos.Size = New System.Drawing.Size(456, 323)
@@ -349,20 +350,20 @@ Partial Class Panel
         'txMetrosPalet
         '
         Me.txMetrosPalet.Enabled = False
-        Me.txMetrosPalet.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txMetrosPalet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txMetrosPalet.Location = New System.Drawing.Point(254, 219)
         Me.txMetrosPalet.MaxLength = 4
         Me.txMetrosPalet.Name = "txMetrosPalet"
-        Me.txMetrosPalet.Size = New System.Drawing.Size(148, 27)
+        Me.txMetrosPalet.Size = New System.Drawing.Size(148, 26)
         Me.txMetrosPalet.TabIndex = 23
         '
         'EtMetrosPalet
         '
         Me.EtMetrosPalet.AutoSize = True
-        Me.EtMetrosPalet.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EtMetrosPalet.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EtMetrosPalet.Location = New System.Drawing.Point(14, 217)
         Me.EtMetrosPalet.Name = "EtMetrosPalet"
-        Me.EtMetrosPalet.Size = New System.Drawing.Size(123, 23)
+        Me.EtMetrosPalet.Size = New System.Drawing.Size(125, 24)
         Me.EtMetrosPalet.TabIndex = 24
         Me.EtMetrosPalet.Text = "Metros Palet"
         '
@@ -378,41 +379,41 @@ Partial Class Panel
         '
         'txPalet
         '
-        Me.txPalet.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txPalet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txPalet.Location = New System.Drawing.Point(255, 51)
         Me.txPalet.MaxLength = 6
         Me.txPalet.Name = "txPalet"
-        Me.txPalet.Size = New System.Drawing.Size(148, 27)
+        Me.txPalet.Size = New System.Drawing.Size(148, 26)
         Me.txPalet.TabIndex = 20
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(11, 51)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 23)
+        Me.Label2.Size = New System.Drawing.Size(85, 24)
         Me.Label2.TabIndex = 21
         Me.Label2.Text = "Nº Palet"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(219, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 23)
+        Me.Label1.Size = New System.Drawing.Size(86, 24)
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "Etiqueta"
         '
         'txParcial
         '
         Me.txParcial.Enabled = False
-        Me.txParcial.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txParcial.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txParcial.Location = New System.Drawing.Point(344, 17)
         Me.txParcial.MaxLength = 4
         Me.txParcial.Name = "txParcial"
-        Me.txParcial.Size = New System.Drawing.Size(59, 27)
+        Me.txParcial.Size = New System.Drawing.Size(59, 26)
         Me.txParcial.TabIndex = 18
         '
         'chkTerminar
@@ -428,48 +429,48 @@ Partial Class Panel
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(13, 249)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(152, 23)
+        Me.Label9.Size = New System.Drawing.Size(159, 24)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Terminar Orden"
         '
         'txMetrosRodaja
         '
-        Me.txMetrosRodaja.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txMetrosRodaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txMetrosRodaja.Location = New System.Drawing.Point(253, 184)
         Me.txMetrosRodaja.MaxLength = 4
         Me.txMetrosRodaja.Name = "txMetrosRodaja"
-        Me.txMetrosRodaja.Size = New System.Drawing.Size(148, 27)
+        Me.txMetrosRodaja.Size = New System.Drawing.Size(148, 26)
         Me.txMetrosRodaja.TabIndex = 6
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(13, 182)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(143, 23)
+        Me.Label7.Size = New System.Drawing.Size(144, 24)
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "Metros Rodaja"
         '
         'txPesoPalet
         '
-        Me.txPesoPalet.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txPesoPalet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txPesoPalet.Location = New System.Drawing.Point(255, 86)
         Me.txPesoPalet.MaxLength = 4
         Me.txPesoPalet.Name = "txPesoPalet"
-        Me.txPesoPalet.Size = New System.Drawing.Size(148, 27)
+        Me.txPesoPalet.Size = New System.Drawing.Size(148, 26)
         Me.txPesoPalet.TabIndex = 7
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(11, 86)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(105, 23)
+        Me.Label6.Size = New System.Drawing.Size(109, 24)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Peso Palet"
         '
@@ -495,39 +496,39 @@ Partial Class Panel
         '
         'txPesoNeto
         '
-        Me.txPesoNeto.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txPesoNeto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txPesoNeto.Location = New System.Drawing.Point(253, 152)
         Me.txPesoNeto.MaxLength = 4
         Me.txPesoNeto.Name = "txPesoNeto"
-        Me.txPesoNeto.Size = New System.Drawing.Size(148, 27)
+        Me.txPesoNeto.Size = New System.Drawing.Size(148, 26)
         Me.txPesoNeto.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(13, 150)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(102, 23)
+        Me.Label5.Size = New System.Drawing.Size(107, 24)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Peso Neto"
         '
         'txRodajas
         '
-        Me.txRodajas.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txRodajas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txRodajas.Location = New System.Drawing.Point(344, 119)
         Me.txRodajas.MaxLength = 2
         Me.txRodajas.Name = "txRodajas"
-        Me.txRodajas.Size = New System.Drawing.Size(59, 27)
+        Me.txRodajas.Size = New System.Drawing.Size(59, 26)
         Me.txRodajas.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(13, 117)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(85, 23)
+        Me.Label3.Size = New System.Drawing.Size(85, 24)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Rodajas"
         '
@@ -571,7 +572,7 @@ Partial Class Panel
         Me.grHora.Controls.Add(Me.Hora3)
         Me.grHora.Controls.Add(Me.Hora2)
         Me.grHora.Controls.Add(Me.Hora1)
-        Me.grHora.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grHora.Location = New System.Drawing.Point(318, 28)
         Me.grHora.Name = "grHora"
         Me.grHora.Size = New System.Drawing.Size(150, 58)
@@ -582,10 +583,10 @@ Partial Class Panel
         'Hora3
         '
         Me.Hora3.AutoSize = True
-        Me.Hora3.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Hora3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Hora3.Location = New System.Drawing.Point(112, 22)
         Me.Hora3.Name = "Hora3"
-        Me.Hora3.Size = New System.Drawing.Size(38, 23)
+        Me.Hora3.Size = New System.Drawing.Size(37, 24)
         Me.Hora3.TabIndex = 16
         Me.Hora3.Text = "3"
         Me.Hora3.UseVisualStyleBackColor = True
@@ -593,10 +594,10 @@ Partial Class Panel
         'Hora2
         '
         Me.Hora2.AutoSize = True
-        Me.Hora2.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Hora2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Hora2.Location = New System.Drawing.Point(57, 22)
         Me.Hora2.Name = "Hora2"
-        Me.Hora2.Size = New System.Drawing.Size(38, 23)
+        Me.Hora2.Size = New System.Drawing.Size(37, 24)
         Me.Hora2.TabIndex = 15
         Me.Hora2.Text = "2"
         Me.Hora2.UseVisualStyleBackColor = True
@@ -604,10 +605,10 @@ Partial Class Panel
         'Hora1
         '
         Me.Hora1.AutoSize = True
-        Me.Hora1.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Hora1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Hora1.Location = New System.Drawing.Point(14, 23)
         Me.Hora1.Name = "Hora1"
-        Me.Hora1.Size = New System.Drawing.Size(37, 23)
+        Me.Hora1.Size = New System.Drawing.Size(37, 24)
         Me.Hora1.TabIndex = 14
         Me.Hora1.Text = "1"
         Me.Hora1.UseVisualStyleBackColor = True
@@ -810,7 +811,7 @@ Partial Class Panel
         Me.grCopias.Controls.Add(Me.etMenosCopias)
         Me.grCopias.Controls.Add(Me.etMasCopias)
         Me.grCopias.Controls.Add(Me.txNoCopias)
-        Me.grCopias.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grCopias.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grCopias.Location = New System.Drawing.Point(9, 160)
         Me.grCopias.Name = "grCopias"
         Me.grCopias.Size = New System.Drawing.Size(132, 67)
@@ -845,11 +846,11 @@ Partial Class Panel
         'txNoCopias
         '
         Me.txNoCopias.Enabled = False
-        Me.txNoCopias.Font = New System.Drawing.Font("Century", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txNoCopias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txNoCopias.Location = New System.Drawing.Point(9, 31)
         Me.txNoCopias.MaxLength = 2
         Me.txNoCopias.Name = "txNoCopias"
-        Me.txNoCopias.Size = New System.Drawing.Size(36, 27)
+        Me.txNoCopias.Size = New System.Drawing.Size(36, 26)
         Me.txNoCopias.TabIndex = 19
         Me.txNoCopias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -858,7 +859,7 @@ Partial Class Panel
         Me.grEtPalet.Controls.Add(Me.etMenos)
         Me.grEtPalet.Controls.Add(Me.txEtiqPalet)
         Me.grEtPalet.Controls.Add(Me.EtMas)
-        Me.grEtPalet.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grEtPalet.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grEtPalet.Location = New System.Drawing.Point(9, 232)
         Me.grEtPalet.Name = "grEtPalet"
         Me.grEtPalet.Size = New System.Drawing.Size(131, 73)
@@ -869,11 +870,11 @@ Partial Class Panel
         'txEtiqPalet
         '
         Me.txEtiqPalet.Enabled = False
-        Me.txEtiqPalet.Font = New System.Drawing.Font("Century", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txEtiqPalet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txEtiqPalet.Location = New System.Drawing.Point(9, 33)
         Me.txEtiqPalet.MaxLength = 2
         Me.txEtiqPalet.Name = "txEtiqPalet"
-        Me.txEtiqPalet.Size = New System.Drawing.Size(33, 27)
+        Me.txEtiqPalet.Size = New System.Drawing.Size(33, 26)
         Me.txEtiqPalet.TabIndex = 19
         Me.txEtiqPalet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -882,7 +883,7 @@ Partial Class Panel
         Me.GrFecha.Controls.Add(Me.etMenosFecha)
         Me.GrFecha.Controls.Add(Me.etMasFecha)
         Me.GrFecha.Controls.Add(Me.txFechaTrabajo)
-        Me.GrFecha.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.GrFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
         Me.GrFecha.Location = New System.Drawing.Point(9, 92)
         Me.GrFecha.Name = "GrFecha"
         Me.GrFecha.Size = New System.Drawing.Size(131, 62)
@@ -917,16 +918,15 @@ Partial Class Panel
         'txFechaTrabajo
         '
         Me.txFechaTrabajo.Enabled = False
-        Me.txFechaTrabajo.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txFechaTrabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txFechaTrabajo.Location = New System.Drawing.Point(3, 26)
         Me.txFechaTrabajo.Name = "txFechaTrabajo"
-        Me.txFechaTrabajo.Size = New System.Drawing.Size(47, 26)
+        Me.txFechaTrabajo.Size = New System.Drawing.Size(47, 24)
         Me.txFechaTrabajo.TabIndex = 0
         Me.txFechaTrabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'grRepetir
         '
-        Me.grRepetir.Controls.Add(Me.Scrap)
         Me.grRepetir.Controls.Add(Me.DateTimePicker2)
         Me.grRepetir.Controls.Add(Me.Manual)
         Me.grRepetir.Controls.Add(Me.OF_2)
@@ -935,7 +935,7 @@ Partial Class Panel
         Me.grRepetir.Controls.Add(Me.OF_6)
         Me.grRepetir.Controls.Add(Me.OF_1)
         Me.grRepetir.Controls.Add(Me.OF_4)
-        Me.grRepetir.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grRepetir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grRepetir.Location = New System.Drawing.Point(149, 160)
         Me.grRepetir.Name = "grRepetir"
         Me.grRepetir.Size = New System.Drawing.Size(319, 100)
@@ -949,9 +949,9 @@ Partial Class Panel
         Me.Scrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Scrap.ForeColor = System.Drawing.Color.DarkTurquoise
         Me.Scrap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Scrap.Location = New System.Drawing.Point(226, 15)
+        Me.Scrap.Location = New System.Drawing.Point(261, 21)
         Me.Scrap.Name = "Scrap"
-        Me.Scrap.Size = New System.Drawing.Size(86, 79)
+        Me.Scrap.Size = New System.Drawing.Size(46, 40)
         Me.Scrap.TabIndex = 22
         Me.Scrap.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Scrap.UseVisualStyleBackColor = True
@@ -961,14 +961,14 @@ Partial Class Panel
         '
         Me.DateTimePicker2.Location = New System.Drawing.Point(54, -26)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 26)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 24)
         Me.DateTimePicker2.TabIndex = 21
         '
         'grOpciones
         '
         Me.grOpciones.Controls.Add(Me.chCalibre)
         Me.grOpciones.Controls.Add(Me.ChGramaje)
-        Me.grOpciones.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.grOpciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
         Me.grOpciones.Location = New System.Drawing.Point(149, 260)
         Me.grOpciones.Name = "grOpciones"
         Me.grOpciones.Size = New System.Drawing.Size(319, 45)
@@ -979,10 +979,10 @@ Partial Class Panel
         'chCalibre
         '
         Me.chCalibre.AutoSize = True
-        Me.chCalibre.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chCalibre.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chCalibre.Location = New System.Drawing.Point(207, 17)
         Me.chCalibre.Name = "chCalibre"
-        Me.chCalibre.Size = New System.Drawing.Size(82, 22)
+        Me.chCalibre.Size = New System.Drawing.Size(80, 22)
         Me.chCalibre.TabIndex = 26
         Me.chCalibre.Text = "Calibre"
         Me.chCalibre.UseVisualStyleBackColor = True
@@ -990,10 +990,10 @@ Partial Class Panel
         'ChGramaje
         '
         Me.ChGramaje.AutoSize = True
-        Me.ChGramaje.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChGramaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChGramaje.Location = New System.Drawing.Point(95, 17)
         Me.ChGramaje.Name = "ChGramaje"
-        Me.ChGramaje.Size = New System.Drawing.Size(93, 22)
+        Me.ChGramaje.Size = New System.Drawing.Size(91, 22)
         Me.ChGramaje.TabIndex = 25
         Me.ChGramaje.Text = "Gramaje"
         Me.ChGramaje.UseVisualStyleBackColor = True
@@ -1003,7 +1003,7 @@ Partial Class Panel
         Me.grBobina.Controls.Add(Me.BobinaMas)
         Me.grBobina.Controls.Add(Me.Label4)
         Me.grBobina.Controls.Add(Me.txBobina)
-        Me.grBobina.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.grBobina.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
         Me.grBobina.Location = New System.Drawing.Point(149, 305)
         Me.grBobina.Name = "grBobina"
         Me.grBobina.Size = New System.Drawing.Size(319, 50)
@@ -1025,20 +1025,20 @@ Partial Class Panel
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(7, 15)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(81, 23)
+        Me.Label4.Size = New System.Drawing.Size(87, 24)
         Me.Label4.TabIndex = 22
         Me.Label4.Text = "Nº Rollo"
         '
         'txBobina
         '
-        Me.txBobina.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txBobina.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txBobina.Location = New System.Drawing.Point(96, 15)
         Me.txBobina.MaxLength = 6
         Me.txBobina.Name = "txBobina"
-        Me.txBobina.Size = New System.Drawing.Size(166, 27)
+        Me.txBobina.Size = New System.Drawing.Size(166, 26)
         Me.txBobina.TabIndex = 21
         '
         'Timer1

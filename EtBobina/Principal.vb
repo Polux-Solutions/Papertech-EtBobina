@@ -148,6 +148,9 @@ Module Principal
         If Usuario.StartsWith("URSS") Then Usuario = "PTEDOM01\Administrador"
 
         sw9 = Leer_Parametros()
+        Parametros_Utilizar()
+        If sw9 Then sw9 = Extraer_Usuario_Web()
+
         If sw9 And (Datos.ImpresoraQR <> "") Then
             sw9 = Funciones.Existe_Impresora(Datos.ImpresoraQR)
             If Not sw9 Then MsgBox($"No Existe la impresora QR {Datos.ImpresoraQR}", vbCritical, "Etiquetas Bobina")

@@ -2026,7 +2026,7 @@
   </binding>
   <service name="Web">
     <port name="Web_Port" binding="tns:Web_Binding">
-      <address location="http://192.168.20.5:7047/DynamicsNAV71/WS/Papertech/Codeunit/Web" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <address location="http://EUSPTUDNAV-P001.sonoco.com:7047/DynamicsNAV71/WS/Papertech/Codeunit/Web" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
     </port>
   </service>
 </definitions>

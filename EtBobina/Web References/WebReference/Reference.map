@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://192.168.20.5:7047/DynamicsNAV71/WS/Papertech/Codeunit/Web" filename="Web.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://EUSPTUDNAV-P001.sonoco.com:7047/DynamicsNAV71/WS/Papertech/Codeunit/Web" filename="Web.wsdl" />
   </Results>
 </DiscoveryClientResultsFile>
