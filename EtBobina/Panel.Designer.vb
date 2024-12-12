@@ -31,6 +31,7 @@ Partial Class Panel
         Me.turnoB = New System.Windows.Forms.RadioButton()
         Me.turnoA = New System.Windows.Forms.RadioButton()
         Me.grOF = New System.Windows.Forms.GroupBox()
+        Me.Scrap = New System.Windows.Forms.Button()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.OK = New System.Windows.Forms.Button()
         Me.txOF = New System.Windows.Forms.TextBox()
@@ -111,7 +112,6 @@ Partial Class Panel
         Me.etMasFecha = New System.Windows.Forms.Button()
         Me.txFechaTrabajo = New System.Windows.Forms.TextBox()
         Me.grRepetir = New System.Windows.Forms.GroupBox()
-        Me.Scrap = New System.Windows.Forms.Button()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.grOpciones = New System.Windows.Forms.GroupBox()
         Me.chCalibre = New System.Windows.Forms.CheckBox()
@@ -206,17 +206,31 @@ Partial Class Panel
         '
         'grOF
         '
-        Me.grOF.Controls.Add(Me.Scrap)
         Me.grOF.Controls.Add(Me.DateTimePicker1)
         Me.grOF.Controls.Add(Me.OK)
         Me.grOF.Controls.Add(Me.txOF)
         Me.grOF.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grOF.Location = New System.Drawing.Point(149, 92)
         Me.grOF.Name = "grOF"
-        Me.grOF.Size = New System.Drawing.Size(319, 66)
+        Me.grOF.Size = New System.Drawing.Size(277, 66)
         Me.grOF.TabIndex = 4
         Me.grOF.TabStop = False
         Me.grOF.Text = "Orden de Fabricación"
+        '
+        'Scrap
+        '
+        Me.Scrap.BackgroundImage = CType(resources.GetObject("Scrap.BackgroundImage"), System.Drawing.Image)
+        Me.Scrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Scrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Scrap.ForeColor = System.Drawing.Color.DarkTurquoise
+        Me.Scrap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Scrap.Location = New System.Drawing.Point(425, 113)
+        Me.Scrap.Name = "Scrap"
+        Me.Scrap.Size = New System.Drawing.Size(46, 45)
+        Me.Scrap.TabIndex = 22
+        Me.Scrap.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Scrap.UseVisualStyleBackColor = True
+        Me.Scrap.Visible = False
         '
         'DateTimePicker1
         '
@@ -621,7 +635,7 @@ Partial Class Panel
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(473, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(476, 28)
         Me.MenuStrip1.TabIndex = 17
         Me.MenuStrip1.Text = "Acciones"
         '
@@ -942,21 +956,6 @@ Partial Class Panel
         Me.grRepetir.TabIndex = 22
         Me.grRepetir.TabStop = False
         '
-        'Scrap
-        '
-        Me.Scrap.BackgroundImage = CType(resources.GetObject("Scrap.BackgroundImage"), System.Drawing.Image)
-        Me.Scrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Scrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Scrap.ForeColor = System.Drawing.Color.DarkTurquoise
-        Me.Scrap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Scrap.Location = New System.Drawing.Point(261, 21)
-        Me.Scrap.Name = "Scrap"
-        Me.Scrap.Size = New System.Drawing.Size(46, 40)
-        Me.Scrap.TabIndex = 22
-        Me.Scrap.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Scrap.UseVisualStyleBackColor = True
-        Me.Scrap.Visible = False
-        '
         'DateTimePicker2
         '
         Me.DateTimePicker2.Location = New System.Drawing.Point(54, -26)
@@ -1051,7 +1050,8 @@ Partial Class Panel
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.Salir
-        Me.ClientSize = New System.Drawing.Size(473, 720)
+        Me.ClientSize = New System.Drawing.Size(476, 720)
+        Me.Controls.Add(Me.Scrap)
         Me.Controls.Add(Me.grBobina)
         Me.Controls.Add(Me.grOpciones)
         Me.Controls.Add(Me.grRepetir)

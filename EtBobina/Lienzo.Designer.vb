@@ -48,6 +48,7 @@ Partial Class Lienzo
         Me.BarcodeQR = New System.Windows.Forms.PictureBox()
         Me.PrintQR = New System.Drawing.Printing.PrintDocument()
         Me.PrintCZZ = New System.Drawing.Printing.PrintDocument()
+        Me.Anonima = New System.Drawing.Printing.PrintDocument()
         CType(Me.BarcodeLeiza, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarcodeQR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -306,6 +307,9 @@ Partial Class Lienzo
         'PrintCZZ
         '
         '
+        'Anonima
+        '
+        '
         'Lienzo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -373,4 +377,5 @@ Partial Class Lienzo
     Friend WithEvents BarcodeQR As PictureBox
     Friend WithEvents PrintQR As Printing.PrintDocument
     Friend WithEvents PrintCZZ As Printing.PrintDocument
+    Friend WithEvents Anonima As Printing.PrintDocument
 End Class

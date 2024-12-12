@@ -145,7 +145,7 @@ Module Principal
 
         Usuario = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString()
 
-        If Usuario.StartsWith("URSS") Then Usuario = "PTEDOM01\Administrador"
+        If Usuario.StartsWith("URSS") Then Usuario = "SPCDOMN\158973"
 
         sw9 = Leer_Parametros()
         Parametros_Utilizar()
