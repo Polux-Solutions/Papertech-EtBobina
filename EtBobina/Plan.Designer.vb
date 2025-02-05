@@ -102,21 +102,20 @@ Partial Class Plan
         Me.Palet = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.GrupoCZZ = New System.Windows.Forms.GroupBox()
-        Me.FruverPack = New System.Windows.Forms.CheckBox()
         Me.Rodajas = New System.Windows.Forms.TextBox()
         Me.Ancho = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.GrupoRollo = New System.Windows.Forms.GroupBox()
+        Me.RolloRodajaDuraNOK = New System.Windows.Forms.RadioButton()
+        Me.RolloRodajaDuraOK = New System.Windows.Forms.RadioButton()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.RolloAnchoMandril = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
         Me.RolloAnchoRodaja = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.RolloAnchoMandril = New System.Windows.Forms.TextBox()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.RolloRodajaDuraOK = New System.Windows.Forms.RadioButton()
-        Me.RolloRodajaDuraNOK = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -959,7 +958,6 @@ Partial Class Plan
         '
         'GrupoCZZ
         '
-        Me.GrupoCZZ.Controls.Add(Me.FruverPack)
         Me.GrupoCZZ.Controls.Add(Me.Rodajas)
         Me.GrupoCZZ.Controls.Add(Me.Ancho)
         Me.GrupoCZZ.Controls.Add(Me.Label21)
@@ -973,18 +971,6 @@ Partial Class Plan
         Me.GrupoCZZ.TabIndex = 16
         Me.GrupoCZZ.TabStop = False
         Me.GrupoCZZ.Visible = False
-        '
-        'FruverPack
-        '
-        Me.FruverPack.AutoSize = True
-        Me.FruverPack.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.FruverPack.Font = New System.Drawing.Font("Segoe UI", 13.8!)
-        Me.FruverPack.Location = New System.Drawing.Point(89, 22)
-        Me.FruverPack.Name = "FruverPack"
-        Me.FruverPack.Size = New System.Drawing.Size(122, 29)
-        Me.FruverPack.TabIndex = 12
-        Me.FruverPack.Text = "FruverPack"
-        Me.FruverPack.UseVisualStyleBackColor = True
         '
         'Rodajas
         '
@@ -1054,6 +1040,61 @@ Partial Class Plan
         Me.GrupoRollo.TabIndex = 17
         Me.GrupoRollo.TabStop = False
         '
+        'RolloRodajaDuraNOK
+        '
+        Me.RolloRodajaDuraNOK.AutoSize = True
+        Me.RolloRodajaDuraNOK.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RolloRodajaDuraNOK.Location = New System.Drawing.Point(334, 79)
+        Me.RolloRodajaDuraNOK.Name = "RolloRodajaDuraNOK"
+        Me.RolloRodajaDuraNOK.Size = New System.Drawing.Size(54, 21)
+        Me.RolloRodajaDuraNOK.TabIndex = 14
+        Me.RolloRodajaDuraNOK.TabStop = True
+        Me.RolloRodajaDuraNOK.Text = "NOK"
+        Me.RolloRodajaDuraNOK.UseVisualStyleBackColor = True
+        '
+        'RolloRodajaDuraOK
+        '
+        Me.RolloRodajaDuraOK.AutoSize = True
+        Me.RolloRodajaDuraOK.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RolloRodajaDuraOK.Location = New System.Drawing.Point(272, 81)
+        Me.RolloRodajaDuraOK.Name = "RolloRodajaDuraOK"
+        Me.RolloRodajaDuraOK.Size = New System.Drawing.Size(44, 21)
+        Me.RolloRodajaDuraOK.TabIndex = 13
+        Me.RolloRodajaDuraOK.TabStop = True
+        Me.RolloRodajaDuraOK.Text = "OK"
+        Me.RolloRodajaDuraOK.UseVisualStyleBackColor = True
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(134, 79)
+        Me.Label27.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(124, 21)
+        Me.Label27.TabIndex = 12
+        Me.Label27.Text = "¿Rodajas Duras?"
+        '
+        'RolloAnchoMandril
+        '
+        Me.RolloAnchoMandril.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RolloAnchoMandril.Location = New System.Drawing.Point(270, 43)
+        Me.RolloAnchoMandril.Margin = New System.Windows.Forms.Padding(2)
+        Me.RolloAnchoMandril.Name = "RolloAnchoMandril"
+        Me.RolloAnchoMandril.Size = New System.Drawing.Size(80, 29)
+        Me.RolloAnchoMandril.TabIndex = 11
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(134, 46)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(115, 21)
+        Me.Label24.TabIndex = 10
+        Me.Label24.Text = "Ancho Mandril."
+        '
         'RolloAnchoRodaja
         '
         Me.RolloAnchoRodaja.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1083,61 +1124,6 @@ Partial Class Plan
         Me.Label26.Size = New System.Drawing.Size(101, 16)
         Me.Label26.TabIndex = 6
         Me.Label26.Text = "Cambio Rollo"
-        '
-        'RolloAnchoMandril
-        '
-        Me.RolloAnchoMandril.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RolloAnchoMandril.Location = New System.Drawing.Point(270, 43)
-        Me.RolloAnchoMandril.Margin = New System.Windows.Forms.Padding(2)
-        Me.RolloAnchoMandril.Name = "RolloAnchoMandril"
-        Me.RolloAnchoMandril.Size = New System.Drawing.Size(80, 29)
-        Me.RolloAnchoMandril.TabIndex = 11
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(134, 46)
-        Me.Label24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(115, 21)
-        Me.Label24.TabIndex = 10
-        Me.Label24.Text = "Ancho Mandril."
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(134, 79)
-        Me.Label27.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(124, 21)
-        Me.Label27.TabIndex = 12
-        Me.Label27.Text = "¿Rodajas Duras?"
-        '
-        'RolloRodajaDuraOK
-        '
-        Me.RolloRodajaDuraOK.AutoSize = True
-        Me.RolloRodajaDuraOK.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RolloRodajaDuraOK.Location = New System.Drawing.Point(272, 81)
-        Me.RolloRodajaDuraOK.Name = "RolloRodajaDuraOK"
-        Me.RolloRodajaDuraOK.Size = New System.Drawing.Size(44, 21)
-        Me.RolloRodajaDuraOK.TabIndex = 13
-        Me.RolloRodajaDuraOK.TabStop = True
-        Me.RolloRodajaDuraOK.Text = "OK"
-        Me.RolloRodajaDuraOK.UseVisualStyleBackColor = True
-        '
-        'RolloRodajaDuraNOK
-        '
-        Me.RolloRodajaDuraNOK.AutoSize = True
-        Me.RolloRodajaDuraNOK.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RolloRodajaDuraNOK.Location = New System.Drawing.Point(334, 79)
-        Me.RolloRodajaDuraNOK.Name = "RolloRodajaDuraNOK"
-        Me.RolloRodajaDuraNOK.Size = New System.Drawing.Size(54, 21)
-        Me.RolloRodajaDuraNOK.TabIndex = 14
-        Me.RolloRodajaDuraNOK.TabStop = True
-        Me.RolloRodajaDuraNOK.Text = "NOK"
-        Me.RolloRodajaDuraNOK.UseVisualStyleBackColor = True
         '
         'Plan
         '
@@ -1259,7 +1245,6 @@ Partial Class Plan
     Friend WithEvents Ancho As TextBox
     Friend WithEvents Label21 As Label
     Friend WithEvents Label22 As Label
-    Friend WithEvents FruverPack As CheckBox
     Friend WithEvents GrupoRollo As GroupBox
     Friend WithEvents Label27 As Label
     Friend WithEvents RolloAnchoMandril As TextBox

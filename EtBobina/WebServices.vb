@@ -185,20 +185,12 @@ Module WebServices
             MyWs.Url = Datos.ServidorWeb
             MyWs.Credentials = New System.Net.NetworkCredential(Datos.UsuarioWeb, Datos.PasswordWeb, Datos.DominioWeb)
 
-            If Etiqueta.FruverPack_OP <> "" Then
-                MyWs.DiarioSalida_FruverPack(Datos.FechaTrabajo, Etiqueta.Turno, Etiqueta.Horario, Etiqueta.FruverPack_OP, Etiqueta.Bobina, Etiqueta.Palet,
-                                             Etiqueta.CZZ_Rodajas, Etiqueta.PesoNeto, Etiqueta.PesoPalet, Etiqueta.MetrosRodaja, Etiqueta.PedirMetrosPalet,
-                                             Etiqueta.CZZ_Ancho, Etiqueta.Gramaje, Etiqueta.Calibre,
-                                             Etiqueta.Terminar, Datos.ActualizarPalet, Etiqueta.Pendiente)
 
-
-            Else
-                MyWs.DiarioSalida7(Datos.FechaTrabajo, Etiqueta.Turno, Etiqueta.Horario, Etiqueta.OP, Etiqueta.Bobina, Etiqueta.Palet, Etiqueta.Rodajas,
+            MyWs.DiarioSalida7(Datos.FechaTrabajo, Etiqueta.Turno, Etiqueta.Horario, Etiqueta.OP, Etiqueta.Bobina, Etiqueta.Palet, Etiqueta.Rodajas,
                                    Etiqueta.PesoNeto, Etiqueta.PesoPalet, Etiqueta.MetrosRodaja, Etiqueta.PedirMetrosPalet,
                                    Etiqueta.Ancho, Etiqueta.Gramaje, Etiqueta.Calibre,
                                    Etiqueta.Terminar, Datos.ActualizarPalet, Etiqueta.Pulper, Etiqueta.Desclasificado, Etiqueta.Pendiente,
                                    Etiqueta.CZZ_Ancho, Etiqueta.CZZ_Rodajas)
-            End If
 
         Catch ex As Exception
             Log("Error en los servicios WEB Diario_Salida: " + ex.Message)

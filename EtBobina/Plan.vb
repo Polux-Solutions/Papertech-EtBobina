@@ -655,13 +655,6 @@ Public Class Plan
             End If
         End If
 
-        If Verificar_datos And Etiqueta.Pulper And FruverPack.Checked Then
-            If Not Variante_FruverPack(CSng(Ancho.Text)) Then
-                MsgBox("El ancho no coincide con los anchos de FruverPack")
-                Verificar_datos = False
-            End If
-        End If
-
         If Verificar_datos And Etiqueta.CambioRollo Then
             If (Me.RolloAnchoMandril.Text = "0") Or (Me.RolloAnchoMandril.Text = "") Then
                 MsgBox($"No se ha indicado Ancho Mandril")
@@ -686,9 +679,6 @@ Public Class Plan
         If Verificar_datos And Not Etiqueta.Pulper Then
             Etiqueta.CZZ_Ancho = 0
             Etiqueta.CZZ_Rodajas = 0
-            Etiqueta.FruverPack_Item = ""
-            Etiqueta.FruverPack_OP = ""
-            Etiqueta.FruverPack_VariantCode = ""
         End If
 
         If Verificar_datos And Etiqueta.Pulper Then
@@ -698,40 +688,6 @@ Public Class Plan
         End If
 
 
-
-    End Function
-
-    Private Function Variante_FruverPack(xAncho As Single) As Boolean
-        Dim dsFruverPack As DataSet = New DataSet()
-        Dim sql As String
-        Dim Mensaje As String = ""
-
-        sql = $"Select VA.[Item No_], VA.[Code], VA.[Ancho], MAX(POL.[Prod_ Order No_]) OP
-                from [{Datos.Empresa}$Item Variant] VA
-                inner Join [{Datos.Empresa}$Prod_ Order Line] POL ON POL.[Item No_] = VA.[Item No_] And POL.[Variant Code] = VA.[Code]
-                where VA.[Cliente] = '052'
-                  And POL.[Status] = 3
-                group by VA.[Item No_], VA.[Code], VA.[Ancho]
-                order by VA.[Item No_], VA.[Code], VA.[Ancho]"
-
-
-        Variante_FruverPack = FuncionesDatos.Cargar_Dataset(dsFruverPack, sql)
-
-        If Variante_FruverPack Then
-            Variante_FruverPack = False
-            For Each dt As DataRow In dsFruverPack.Tables(0).Rows
-                Mensaje += vbCrLf + $"{dt.Item("Item No_")} - {dt.Item("Code")} Ancho: {Format(dt.Item("Ancho"), "###0")}"
-                If dt.Item("Ancho") = xAncho Then
-                    Etiqueta.FruverPack_Item = dt.Item("Item No_")
-                    Etiqueta.FruverPack_VariantCode = dt.Item("Code")
-                    Etiqueta.FruverPack_OP = dt.Item("OP")
-                    Variante_FruverPack = True
-                    Exit For
-                End If
-            Next
-
-            If Not Variante_FruverPack Then MsgBox($"No se ha indicado un ancho correcto para FruverPack: {Mensaje}")
-        End If
 
     End Function
 
@@ -966,5 +922,9 @@ Public Class Plan
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub FruverPack_CheckedChanged(sender As Object, e As EventArgs)
+
     End Sub
 End Class

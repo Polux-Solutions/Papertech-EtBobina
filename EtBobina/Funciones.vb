@@ -212,9 +212,6 @@ Module Funciones
         Etiqueta.MostrarGramaje = True
         Etiqueta.CZZ_Ancho = 0
         Etiqueta.CZZ_Rodajas = 0
-        Etiqueta.FruverPack_Item = ""
-        Etiqueta.FruverPack_OP = ""
-        Etiqueta.FruverPack_VariantCode = ""
         Etiqueta.Pendiente = False
         Etiqueta.CambioRollo = False
         Etiqueta.Rollo_AnchoMandril = 0

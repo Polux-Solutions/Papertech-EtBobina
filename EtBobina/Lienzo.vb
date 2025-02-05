@@ -6,6 +6,7 @@ Imports ZXing.QrCode
 Imports System.Web.Mvc
 Imports System.Drawing
 Imports System.Drawing.Printing
+Imports EtBobina.ReportingNAVDataSet1TableAdapters
 
 Public Class Lienzo
 
@@ -290,45 +291,45 @@ Public Class Lienzo
         Dim PaperSize As System.Drawing.Printing.PaperSize
 
         If Etiqueta.Copias > 0 Then
-            If Etiqueta.TipoEtiqueta = 5 Then
-                Imprimir_Etiqueta_Anonima()
+            If Etiqueta.Pulper Then
+                Imprimir_Etiqueta_Pulper()
             Else
-                generar_Barcode()
-                For n = 1 To Etiqueta.Copias
-                    For Each PaperSize In PrintDoc.PrinterSettings.PaperSizes
-                        If (PaperSize.PaperName = "A4") Then
-                            PrintDoc.DefaultPageSettings.PaperSize = PaperSize
-                            Exit For
+                If Etiqueta.TipoEtiqueta = 5 Then
+                    Imprimir_Etiqueta_Anonima()
+                Else
+                    generar_Barcode()
+                    For n = 1 To Etiqueta.Copias
+                        For Each PaperSize In PrintDoc.PrinterSettings.PaperSizes
+                            If (PaperSize.PaperName = "A4") Then
+                                PrintDoc.DefaultPageSettings.PaperSize = PaperSize
+                                Exit For
+                            End If
+                        Next
+
+                        PrintDoc.DefaultPageSettings.Landscape = True
+                        PrintDoc.DefaultPageSettings.Margins.Left = 0
+                        PrintDoc.DefaultPageSettings.Margins.Top = 0
+                        PrintDoc.Print()
+
+                        'If Etiqueta.Cliente = "931" Then Etiqueta.GenerarQR = True
+
+                        If Etiqueta.GenerarQR Then
+                            PrintQR.PrinterSettings.PrinterName = Datos.ImpresoraQR
+                            'PrintQR.DefaultPageSettings.PaperSize = New System.Drawing.Printing.PaperSize("Etiqueta QR", 315, 131)
+                            'PrintQR.DefaultPageSettings.Landscape = True
+                            PrintQR.DefaultPageSettings.Margins.Left = 0
+                            PrintQR.DefaultPageSettings.Margins.Top = 0
+                            ' KKK PrintQR.Print()
                         End If
                     Next
-
-                    PrintDoc.DefaultPageSettings.Landscape = True
-                    PrintDoc.DefaultPageSettings.Margins.Left = 0
-                    PrintDoc.DefaultPageSettings.Margins.Top = 0
-                    PrintDoc.Print()
-
-                    'If Etiqueta.Cliente = "931" Then Etiqueta.GenerarQR = True
-
-                    If Etiqueta.GenerarQR Then
-                        PrintQR.PrinterSettings.PrinterName = Datos.ImpresoraQR
-                        'PrintQR.DefaultPageSettings.PaperSize = New System.Drawing.Printing.PaperSize("Etiqueta QR", 315, 131)
-                        'PrintQR.DefaultPageSettings.Landscape = True
-                        PrintQR.DefaultPageSettings.Margins.Left = 0
-                        PrintQR.DefaultPageSettings.Margins.Top = 0
-                        ' KKK PrintQR.Print()
-                    End If
-
-                    If Etiqueta.Pulper Then Imprimir_Etiqueta_Pulper()
-
-                Next
+                End If
             End If
-
         End If
     End Sub
 
     Public Sub Imprimir_Etiqueta_Pulper()
         PrintCZZ.PrinterSettings.PrinterName = Datos.ImpresoraQR
-        PrintCZZ.PrinterSettings.Copies = 2
+        PrintCZZ.PrinterSettings.Copies = Etiqueta.Copias
         PrintCZZ.DefaultPageSettings.PaperSize = New System.Drawing.Printing.PaperSize("Etiqueta QR", 394, 591)
         PrintCZZ.DefaultPageSettings.Landscape = True
         PrintCZZ.DefaultPageSettings.Margins.Left = 0
@@ -339,7 +340,7 @@ Public Class Lienzo
     End Sub
     Public Sub Imprimir_Etiqueta_Anonima()
         Anonima.PrinterSettings.PrinterName = Datos.ImpresoraQR
-        Anonima.PrinterSettings.Copies = 2
+        Anonima.PrinterSettings.Copies = Etiqueta.Copias
         Anonima.DefaultPageSettings.PaperSize = New System.Drawing.Printing.PaperSize("Etiqueta QR", 394, 591)
         Anonima.DefaultPageSettings.Landscape = True
         Anonima.DefaultPageSettings.Margins.Left = 0
@@ -671,6 +672,7 @@ Public Class Lienzo
     Private Sub Anonima_PrintPage(sender As Object, e As PrintPageEventArgs) Handles Anonima.PrintPage
         Dim Pt As New System.Drawing.Point
         Dim ftHelvetica18 As New System.Drawing.Font("Helvetica Bolt", 18)
+        Dim ftHelvetica45 As New System.Drawing.Font("Helvetica Bolt", 45)
         Dim ftHelvetica55 As New System.Drawing.Font("Helvetica Bolt", 55)
         Dim ftHelvetica60 As New System.Drawing.Font("Helvetica Bolt", 60)
         Dim ftHelvetica65 As New System.Drawing.Font("Helvetica Bolt", 65)
@@ -688,19 +690,24 @@ Public Class Lienzo
         Pt.X = 2
         Pt.Y = 30
 
-        e.Graphics.DrawString($"{Etiqueta.Bobina.ToString}-{Etiqueta.Palet.ToString}", ftHelvetica60, Brushes.Black, Pt)
+        e.Graphics.DrawString($"{Etiqueta.Palet.ToString}/{Etiqueta.Rodajas.ToString}", ftHelvetica60, Brushes.Black, Pt)
 
         Pt.X = 2
         Pt.Y = 60
         e.Graphics.DrawString($"{Etiqueta.PesoNeto} KG", ftHelvetica65, Brushes.Black, Pt)
 
-        Pt.X = 110
+        Pt.X = 115
         Pt.Y = 70
-        e.Graphics.DrawString($" CL. {Etiqueta.Cliente}", ftHelvetica25, Brushes.Black, Pt)
+        e.Graphics.DrawString($"{Etiqueta.Bobina.ToString}", ftHelvetica25, Brushes.Black, Pt)
+
 
         Pt.X = 2
         Pt.Y = 87
-        e.Graphics.DrawString($"{Funciones.Valor_OP(Etiqueta.OP).ToString}  {Etiqueta.CZZ_Ancho} mm/{Etiqueta.Gramaje}   {Format(Now, "MM-yy")}", ftHelvetica25, Brushes.Black, Pt)
+        If Etiqueta.MostrarCalibre Then
+            e.Graphics.DrawString($"{Funciones.Valor_OP(Etiqueta.OP).ToString}  {Etiqueta.Ancho.ToString("####")} mm/{Etiqueta.Calibre}   {Format(Now, "MM-yy")}   {Etiqueta.Cliente}", ftHelvetica25, Brushes.Black, Pt)
+        Else
+            e.Graphics.DrawString($"{Funciones.Valor_OP(Etiqueta.OP).ToString}  {Etiqueta.Ancho.ToString("####")} mm/{Etiqueta.Gramaje}   {Format(Now, "MM-yy")}   {Etiqueta.Cliente}", ftHelvetica25, Brushes.Black, Pt)
+        End If
 
         e.HasMorePages = False
     End Sub

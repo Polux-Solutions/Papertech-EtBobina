@@ -124,9 +124,6 @@ Module Principal
         Public Desclasificado As Boolean
         Public CZZ_Ancho As Single
         Public CZZ_Rodajas As Integer
-        Public FruverPack_Item As String
-        Public FruverPack_VariantCode As String
-        Public FruverPack_OP As String
         Public Pendiente As Boolean
         Public CambioRollo As Boolean
         Public Rollo_AnchoRodaja As Single

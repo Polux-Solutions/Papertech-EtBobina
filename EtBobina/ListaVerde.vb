@@ -32,11 +32,12 @@
 
         ListView2.Columns.Clear()
         ListView2.Items.Clear()
-        ListView2.Columns.Add("OF", 80, HorizontalAlignment.Center)
-        ListView2.Columns.Add("Cont.", 70, HorizontalAlignment.Right)
-        ListView2.Columns.Add("C. turno", 90, HorizontalAlignment.Right)
-        ListView2.Columns.Add("C. Orden", 90, HorizontalAlignment.Right)
-        ListView2.Columns.Add("C. Pdte.", 90, HorizontalAlignment.Right)
+        ListView2.Columns.Add("OF", 85, HorizontalAlignment.Center)
+        ListView2.Columns.Add("Cont.", 50, HorizontalAlignment.Right)
+        ListView2.Columns.Add("C. turno", 75, HorizontalAlignment.Right)
+        ListView2.Columns.Add("C. Orden", 75, HorizontalAlignment.Right)
+        ListView2.Columns.Add("CZZ", 60, HorizontalAlignment.Right)
+        ListView2.Columns.Add("C. Pdte.", 75, HorizontalAlignment.Right)
 
 
 
@@ -142,6 +143,7 @@
             ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(Format(oRead.Item("Counter"), "#,##0"))
             ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(Format(oRead.Item("Cantidad Turno"), "#,##0"))
             ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(Format(oRead.Item("Cantidad OF"), "#,##0"))
+            ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(Format(oRead.Item("Cantidad CZZ"), "#,##0"))
             ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(Format(oRead.Item("Cantidad Pendiente"), "#,##0"))
             Qty += oRead.Item("Cantidad Turno")
         Loop

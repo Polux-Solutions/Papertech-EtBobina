@@ -194,7 +194,7 @@ Partial Class ListaVerde
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1224, 691)
+        Me.ClientSize = New System.Drawing.Size(1219, 691)
         Me.Controls.Add(Me.Ordenar2)
         Me.Controls.Add(Me.Ordenar1)
         Me.Controls.Add(Me.Label4)
