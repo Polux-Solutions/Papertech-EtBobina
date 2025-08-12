@@ -541,8 +541,9 @@ Public Class Lienzo
             Dim bar2 = New BarcodeLib.Barcode
             bar2.IncludeLabel = True
 
-            Pt.X = 170
-            Pt.Y = 180
+            Pt.X = 175
+            Pt.Y = 170
+            'Pt.Y = 180
             Try
                 e.Graphics.DrawImage(bar2.Encode(BarcodeLib.TYPE.CODE128B, Etiqueta.BarcodeLeiza, 324, 72), Pt.X, Pt.Y, 110, 17)
             Catch ex As Exception
@@ -704,9 +705,9 @@ Public Class Lienzo
         Pt.X = 2
         Pt.Y = 87
         If Etiqueta.MostrarCalibre Then
-            e.Graphics.DrawString($"{Funciones.Valor_OP(Etiqueta.OP).ToString}  {Etiqueta.Ancho.ToString("####")} mm/{Etiqueta.Calibre}   {Format(Now, "MM-yy")}   {Etiqueta.Cliente}", ftHelvetica25, Brushes.Black, Pt)
+            e.Graphics.DrawString($"{Funciones.Valor_OP(Etiqueta.OP).ToString}  {Etiqueta.Ancho.ToString("####")} mm/{Etiqueta.Calibre} MIC  {Format(Now, "MM-yy")}   {Etiqueta.Cliente}", ftHelvetica25, Brushes.Black, Pt)
         Else
-            e.Graphics.DrawString($"{Funciones.Valor_OP(Etiqueta.OP).ToString}  {Etiqueta.Ancho.ToString("####")} mm/{Etiqueta.Gramaje}   {Format(Now, "MM-yy")}   {Etiqueta.Cliente}", ftHelvetica25, Brushes.Black, Pt)
+            e.Graphics.DrawString($"{Funciones.Valor_OP(Etiqueta.OP).ToString}  {Etiqueta.Ancho.ToString("####")} mm/{Etiqueta.Gramaje} GR  {Format(Now, "MM-yy")}   {Etiqueta.Cliente}", ftHelvetica25, Brushes.Black, Pt)
         End If
 
         e.HasMorePages = False
