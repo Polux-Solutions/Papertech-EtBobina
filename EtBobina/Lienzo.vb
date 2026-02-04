@@ -289,12 +289,15 @@ Public Class Lienzo
     Public Sub Imprimir_Etiqueta()
         Dim n As Byte
         Dim PaperSize As System.Drawing.Printing.PaperSize
+        Dim Anonima As Boolean = False
 
         If Etiqueta.Copias > 0 Then
             If Etiqueta.Pulper Then
                 Imprimir_Etiqueta_Pulper()
             Else
-                If Etiqueta.TipoEtiqueta = 5 Then
+                Anonima = (Etiqueta.TipoEtiqueta = 5)
+                If Not Anonima Then Anonima = (Etiqueta.EtiquetaCZZ And (Etiqueta.Referencia = "CZZ" Or Etiqueta.Referencia = "C0Z"))
+                If Anonima Then
                     Imprimir_Etiqueta_Anonima()
                 Else
                     generar_Barcode()
@@ -452,9 +455,9 @@ Public Class Lienzo
         Pt.Y = 58
         e.Graphics.DrawString(Etiqueta.Cliente, ftHelvetica55, Brushes.Black, Pt)
 
-        Pt.X = 225
-        Pt.Y = 77
-        e.Graphics.DrawString("FSC: SGSCH-COC-009649", ftHelvetica14, Brushes.Black, Pt)
+        'Pt.X = 225
+        'Pt.Y = 77
+        'e.Graphics.DrawString("FSC: SGSCH-COC-009649", ftHelvetica14, Brushes.Black, Pt)
 
         Pt.X = 0
         Pt.Y = 92

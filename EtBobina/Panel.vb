@@ -984,7 +984,7 @@ Public Class Panel
                     Etiqueta.Copias = 1
 
                     Lienzo.txNeto.Text = Etiqueta.PesoNeto.ToString
-
+                    Calcular_Metros()
                     Lienzo.Imprimir_Etiqueta()
                     Lienzo.Close()
 

@@ -83,6 +83,7 @@ Module Principal
         Public Pedido As String
         Public Cliente As String
         Public TipoEtiqueta As Integer ' 0-> Normal 1-> Leiza 2-> Essity 3->Sonoco 4-> Sonoco QR
+        Public EtiquetaCZZ As Boolean
         Public TipoPeso As Integer ' 0->Neto 1->Bruto
         Public GenerarQR As Boolean
         Public Idioma As String

@@ -133,11 +133,11 @@ Module FuncionesDatos
         End If
 
         If Etiqueta.Pedido = "" Then
-            cSql = $" SELECT CU.[No_] , '', CU.[Su Referencia], CU.[Language Code], CU.[Plan de Verificacion], CU.[Tipo Etiqueta], CU.[Etiqueta Tipo Peso], CU.[Generar Etiqueta QR]
+            cSql = $" SELECT CU.[No_] , '', CU.[Su Referencia], CU.[Language Code], CU.[Plan de Verificacion], CU.[Tipo Etiqueta], CU.[Etiqueta Tipo Peso], CU.[Generar Etiqueta QR], CU.[Etiqueta CZZ]
                        FROM [{Datos.Empresa}$Customer] CU
                         where CU.[No_] = '{Etiqueta.Variante.Substring(0, 3)}'"
         Else
-            cSql = " SELECT SH.[Sell-to Customer No_], SH.[External Document No_], CU.[Su Referencia], CU.[Language Code], CU.[Plan de Verificacion],CU.[Tipo Etiqueta], CU.[Etiqueta Tipo Peso], CU.[Generar Etiqueta QR] " +
+            cSql = " SELECT SH.[Sell-to Customer No_], SH.[External Document No_], CU.[Su Referencia], CU.[Language Code], CU.[Plan de Verificacion],CU.[Tipo Etiqueta], CU.[Etiqueta Tipo Peso], CU.[Generar Etiqueta QR], CU.[Etiqueta CZZ] " +
                     " FROM [" + Datos.Empresa + "$Sales Header] SH" +
                     " INNER JOIN  [" + Datos.Empresa + "$Customer] CU" +
                     "       ON CU.[No_] = SH.[Sell-to Customer No_]" +
@@ -160,6 +160,7 @@ Module FuncionesDatos
             Etiqueta.TipoEtiqueta = oRead.Item("Tipo Etiqueta")
             Etiqueta.TipoPeso = oRead.Item("Etiqueta Tipo Peso")
             Etiqueta.GenerarQR = oRead.Item("Generar Etiqueta QR")
+            Etiqueta.EtiquetaCZZ = (oRead.Item("Etiqueta CZZ") = 1)
         End If
 
         ' KK
