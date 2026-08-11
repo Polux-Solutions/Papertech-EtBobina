@@ -31,10 +31,10 @@ Partial Class Panel
         Me.turnoB = New System.Windows.Forms.RadioButton()
         Me.turnoA = New System.Windows.Forms.RadioButton()
         Me.grOF = New System.Windows.Forms.GroupBox()
-        Me.Scrap = New System.Windows.Forms.Button()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.OK = New System.Windows.Forms.Button()
         Me.txOF = New System.Windows.Forms.TextBox()
+        Me.Scrap = New System.Windows.Forms.Button()
         Me.Manual = New System.Windows.Forms.Button()
         Me.OF_6 = New System.Windows.Forms.Button()
         Me.OF_5 = New System.Windows.Forms.Button()
@@ -75,6 +75,7 @@ Partial Class Panel
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuConexDatos = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuConexNAV = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuConexMQTT = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.MenuAbrir = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -97,10 +98,15 @@ Partial Class Panel
         Me.PesosPorOFyBobina = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.RepetirEtiquetaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RepetirEtiquetaAntiguaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
         Me.ImprimirQRPruebasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MODOToolStrip = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImpresoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrinterRobot = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrinterSato = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrinterLocal = New System.Windows.Forms.ToolStripMenuItem()
         Me.grCopias = New System.Windows.Forms.GroupBox()
         Me.etMenosCopias = New System.Windows.Forms.Button()
         Me.etMasCopias = New System.Windows.Forms.Button()
@@ -121,6 +127,9 @@ Partial Class Panel
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txBobina = New System.Windows.Forms.TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ImpresoraSeleccionada = New System.Windows.Forms.Label()
+        Me.LabelImpresora = New System.Windows.Forms.Label()
         Me.grTurno.SuspendLayout()
         Me.grOF.SuspendLayout()
         Me.grDatos.SuspendLayout()
@@ -132,6 +141,7 @@ Partial Class Panel
         Me.grRepetir.SuspendLayout()
         Me.grOpciones.SuspendLayout()
         Me.grBobina.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'grTurno
@@ -217,21 +227,6 @@ Partial Class Panel
         Me.grOF.TabStop = False
         Me.grOF.Text = "Orden de Fabricación"
         '
-        'Scrap
-        '
-        Me.Scrap.BackgroundImage = CType(resources.GetObject("Scrap.BackgroundImage"), System.Drawing.Image)
-        Me.Scrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Scrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Scrap.ForeColor = System.Drawing.Color.DarkTurquoise
-        Me.Scrap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Scrap.Location = New System.Drawing.Point(425, 113)
-        Me.Scrap.Name = "Scrap"
-        Me.Scrap.Size = New System.Drawing.Size(46, 45)
-        Me.Scrap.TabIndex = 22
-        Me.Scrap.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Scrap.UseVisualStyleBackColor = True
-        Me.Scrap.Visible = False
-        '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(54, -26)
@@ -256,6 +251,21 @@ Partial Class Panel
         Me.txOF.Name = "txOF"
         Me.txOF.Size = New System.Drawing.Size(181, 35)
         Me.txOF.TabIndex = 3
+        '
+        'Scrap
+        '
+        Me.Scrap.BackgroundImage = CType(resources.GetObject("Scrap.BackgroundImage"), System.Drawing.Image)
+        Me.Scrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Scrap.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Scrap.ForeColor = System.Drawing.Color.DarkTurquoise
+        Me.Scrap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Scrap.Location = New System.Drawing.Point(425, 113)
+        Me.Scrap.Name = "Scrap"
+        Me.Scrap.Size = New System.Drawing.Size(46, 45)
+        Me.Scrap.TabIndex = 22
+        Me.Scrap.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Scrap.UseVisualStyleBackColor = True
+        Me.Scrap.Visible = False
         '
         'Manual
         '
@@ -384,9 +394,9 @@ Partial Class Panel
         'SoloImprimir
         '
         Me.SoloImprimir.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SoloImprimir.Location = New System.Drawing.Point(233, 282)
+        Me.SoloImprimir.Location = New System.Drawing.Point(191, 282)
         Me.SoloImprimir.Name = "SoloImprimir"
-        Me.SoloImprimir.Size = New System.Drawing.Size(92, 35)
+        Me.SoloImprimir.Size = New System.Drawing.Size(109, 35)
         Me.SoloImprimir.TabIndex = 22
         Me.SoloImprimir.Text = "Imprimir"
         Me.SoloImprimir.UseVisualStyleBackColor = True
@@ -491,9 +501,9 @@ Partial Class Panel
         'DatosSalir
         '
         Me.DatosSalir.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DatosSalir.Location = New System.Drawing.Point(343, 282)
+        Me.DatosSalir.Location = New System.Drawing.Point(344, 282)
         Me.DatosSalir.Name = "DatosSalir"
-        Me.DatosSalir.Size = New System.Drawing.Size(101, 35)
+        Me.DatosSalir.Size = New System.Drawing.Size(100, 35)
         Me.DatosSalir.TabIndex = 11
         Me.DatosSalir.Text = "Cancelar"
         Me.DatosSalir.UseVisualStyleBackColor = True
@@ -501,9 +511,9 @@ Partial Class Panel
         'DatosOK
         '
         Me.DatosOK.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DatosOK.Location = New System.Drawing.Point(15, 282)
+        Me.DatosOK.Location = New System.Drawing.Point(6, 282)
         Me.DatosOK.Name = "DatosOK"
-        Me.DatosOK.Size = New System.Drawing.Size(206, 35)
+        Me.DatosOK.Size = New System.Drawing.Size(179, 35)
         Me.DatosOK.TabIndex = 10
         Me.DatosOK.Text = "Registrar + Imprimir"
         Me.DatosOK.UseVisualStyleBackColor = True
@@ -550,9 +560,9 @@ Partial Class Panel
         '
         Me.Salir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Salir.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Salir.Location = New System.Drawing.Point(12, 685)
+        Me.Salir.Location = New System.Drawing.Point(297, 10)
         Me.Salir.Name = "Salir"
-        Me.Salir.Size = New System.Drawing.Size(456, 34)
+        Me.Salir.Size = New System.Drawing.Size(147, 34)
         Me.Salir.TabIndex = 9
         Me.Salir.Text = "SALIR"
         Me.Salir.UseVisualStyleBackColor = True
@@ -631,7 +641,7 @@ Partial Class Panel
         '
         Me.MenuStrip1.AccessibleRole = System.Windows.Forms.AccessibleRole.Window
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.MODOToolStrip})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.MODOToolStrip, Me.ImpresoraToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
@@ -641,7 +651,7 @@ Partial Class Panel
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuModoTest, Me.ToolStripSeparator8, Me.MenuConexDatos, Me.MenuConexNAV, Me.ToolStripSeparator2, Me.MenuAbrir, Me.ToolStripSeparator1, Me.MenuSinPalet, Me.ToolStripSeparator4, Me.MenuCambioTurno, Me.ToolStripSeparator7, Me.MenuRechazo, Me.ToolStripSeparator3, Me.ToolStripMenuItem4, Me.MenuSalir, Me.EnviarOPTESTToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuModoTest, Me.ToolStripSeparator8, Me.MenuConexDatos, Me.MenuConexNAV, Me.MenuConexMQTT, Me.ToolStripSeparator2, Me.MenuAbrir, Me.ToolStripSeparator1, Me.MenuSinPalet, Me.ToolStripSeparator4, Me.MenuCambioTurno, Me.ToolStripSeparator7, Me.MenuRechazo, Me.ToolStripSeparator3, Me.ToolStripMenuItem4, Me.MenuSalir, Me.EnviarOPTESTToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(67, 24)
         Me.ToolStripMenuItem1.Text = "Acciones"
@@ -649,97 +659,103 @@ Partial Class Panel
         'MenuModoTest
         '
         Me.MenuModoTest.Name = "MenuModoTest"
-        Me.MenuModoTest.Size = New System.Drawing.Size(196, 22)
+        Me.MenuModoTest.Size = New System.Drawing.Size(200, 22)
         Me.MenuModoTest.Text = "Modo Test"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(193, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(197, 6)
         '
         'MenuConexDatos
         '
         Me.MenuConexDatos.Name = "MenuConexDatos"
-        Me.MenuConexDatos.Size = New System.Drawing.Size(196, 22)
+        Me.MenuConexDatos.Size = New System.Drawing.Size(200, 22)
         Me.MenuConexDatos.Text = "Probar Conexión Datos"
         '
         'MenuConexNAV
         '
         Me.MenuConexNAV.Name = "MenuConexNAV"
-        Me.MenuConexNAV.Size = New System.Drawing.Size(196, 22)
+        Me.MenuConexNAV.Size = New System.Drawing.Size(200, 22)
         Me.MenuConexNAV.Text = "Probar Conexión NAV"
+        '
+        'MenuConexMQTT
+        '
+        Me.MenuConexMQTT.Name = "MenuConexMQTT"
+        Me.MenuConexMQTT.Size = New System.Drawing.Size(200, 22)
+        Me.MenuConexMQTT.Text = "Probar Conexxón MQTT"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(193, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(197, 6)
         '
         'MenuAbrir
         '
         Me.MenuAbrir.Name = "MenuAbrir"
-        Me.MenuAbrir.Size = New System.Drawing.Size(196, 22)
+        Me.MenuAbrir.Size = New System.Drawing.Size(200, 22)
         Me.MenuAbrir.Text = "Abrir Orden Terminada"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(193, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(197, 6)
         '
         'MenuSinPalet
         '
         Me.MenuSinPalet.Name = "MenuSinPalet"
-        Me.MenuSinPalet.Size = New System.Drawing.Size(196, 22)
+        Me.MenuSinPalet.Size = New System.Drawing.Size(200, 22)
         Me.MenuSinPalet.Text = "No Actualizar Nº Palet"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(193, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(197, 6)
         '
         'MenuCambioTurno
         '
         Me.MenuCambioTurno.Name = "MenuCambioTurno"
-        Me.MenuCambioTurno.Size = New System.Drawing.Size(196, 22)
+        Me.MenuCambioTurno.Size = New System.Drawing.Size(200, 22)
         Me.MenuCambioTurno.Text = "Cambiar Turno"
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(193, 6)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(197, 6)
         '
         'MenuRechazo
         '
         Me.MenuRechazo.Name = "MenuRechazo"
-        Me.MenuRechazo.Size = New System.Drawing.Size(196, 22)
+        Me.MenuRechazo.Size = New System.Drawing.Size(200, 22)
         Me.MenuRechazo.Text = "Rechazo"
         Me.MenuRechazo.Visible = False
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(193, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(197, 6)
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(196, 22)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(200, 22)
         Me.ToolStripMenuItem4.Text = "¿Quién Soy?"
         '
         'MenuSalir
         '
         Me.MenuSalir.Name = "MenuSalir"
-        Me.MenuSalir.Size = New System.Drawing.Size(196, 22)
+        Me.MenuSalir.Size = New System.Drawing.Size(200, 22)
         Me.MenuSalir.Text = "Salir"
         '
         'EnviarOPTESTToolStripMenuItem
         '
         Me.EnviarOPTESTToolStripMenuItem.Name = "EnviarOPTESTToolStripMenuItem"
-        Me.EnviarOPTESTToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.EnviarOPTESTToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.EnviarOPTESTToolStripMenuItem.Text = "Enviar OP TEST"
         '
         'ToolStripMenuItem2
         '
-        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResumenDia, Me.ResumenPorOFToolStripMenuItem, Me.ResumenTurnoLote, Me.ToolStripSeparator6, Me.PesosPorOF, Me.PesoPorBobina, Me.PesosPorOFyBobina, Me.ToolStripSeparator5, Me.RepetirEtiquetaToolStripMenuItem, Me.ToolStripSeparator9, Me.ImprimirQRPruebasToolStripMenuItem})
+        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResumenDia, Me.ResumenPorOFToolStripMenuItem, Me.ResumenTurnoLote, Me.ToolStripSeparator6, Me.PesosPorOF, Me.PesoPorBobina, Me.PesosPorOFyBobina, Me.ToolStripSeparator5, Me.RepetirEtiquetaToolStripMenuItem, Me.RepetirEtiquetaAntiguaToolStripMenuItem, Me.ToolStripSeparator9, Me.ImprimirQRPruebasToolStripMenuItem})
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(66, 24)
         Me.ToolStripMenuItem2.Text = "Informes"
@@ -794,7 +810,13 @@ Partial Class Panel
         '
         Me.RepetirEtiquetaToolStripMenuItem.Name = "RepetirEtiquetaToolStripMenuItem"
         Me.RepetirEtiquetaToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
-        Me.RepetirEtiquetaToolStripMenuItem.Text = "Repetir Etiqueta"
+        Me.RepetirEtiquetaToolStripMenuItem.Text = "Repetir Etiqueta Manual"
+        '
+        'RepetirEtiquetaAntiguaToolStripMenuItem
+        '
+        Me.RepetirEtiquetaAntiguaToolStripMenuItem.Name = "RepetirEtiquetaAntiguaToolStripMenuItem"
+        Me.RepetirEtiquetaAntiguaToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.RepetirEtiquetaAntiguaToolStripMenuItem.Text = "Repetir Etiqueta Antigua"
         '
         'ToolStripSeparator9
         '
@@ -819,6 +841,34 @@ Partial Class Panel
         Me.MODOToolStrip.Name = "MODOToolStrip"
         Me.MODOToolStrip.Size = New System.Drawing.Size(68, 24)
         Me.MODOToolStrip.Text = "MODO"
+        '
+        'ImpresoraToolStripMenuItem
+        '
+        Me.ImpresoraToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrinterRobot, Me.PrinterSato, Me.PrinterLocal})
+        Me.ImpresoraToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ImpresoraToolStripMenuItem.ForeColor = System.Drawing.Color.Black
+        Me.ImpresoraToolStripMenuItem.Name = "ImpresoraToolStripMenuItem"
+        Me.ImpresoraToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
+        Me.ImpresoraToolStripMenuItem.Text = "Impresora"
+        '
+        'PrinterRobot
+        '
+        Me.PrinterRobot.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.PrinterRobot.Name = "PrinterRobot"
+        Me.PrinterRobot.Size = New System.Drawing.Size(172, 22)
+        Me.PrinterRobot.Text = "Robot"
+        '
+        'PrinterSato
+        '
+        Me.PrinterSato.Name = "PrinterSato"
+        Me.PrinterSato.Size = New System.Drawing.Size(172, 22)
+        Me.PrinterSato.Text = "Manual"
+        '
+        'PrinterLocal
+        '
+        Me.PrinterLocal.Name = "PrinterLocal"
+        Me.PrinterLocal.Size = New System.Drawing.Size(172, 22)
+        Me.PrinterLocal.Text = "Etiquetas Antiguas"
         '
         'grCopias
         '
@@ -1043,6 +1093,38 @@ Partial Class Panel
         'Timer1
         '
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.ImpresoraSeleccionada)
+        Me.GroupBox1.Controls.Add(Me.LabelImpresora)
+        Me.GroupBox1.Controls.Add(Me.Salir)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 679)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(455, 50)
+        Me.GroupBox1.TabIndex = 28
+        Me.GroupBox1.TabStop = False
+        '
+        'ImpresoraSeleccionada
+        '
+        Me.ImpresoraSeleccionada.AutoSize = True
+        Me.ImpresoraSeleccionada.Font = New System.Drawing.Font("Segoe UI", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ImpresoraSeleccionada.ForeColor = System.Drawing.Color.Blue
+        Me.ImpresoraSeleccionada.Location = New System.Drawing.Point(186, 16)
+        Me.ImpresoraSeleccionada.Name = "ImpresoraSeleccionada"
+        Me.ImpresoraSeleccionada.Size = New System.Drawing.Size(74, 25)
+        Me.ImpresoraSeleccionada.TabIndex = 11
+        Me.ImpresoraSeleccionada.Text = "Printer"
+        '
+        'LabelImpresora
+        '
+        Me.LabelImpresora.AutoSize = True
+        Me.LabelImpresora.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelImpresora.Location = New System.Drawing.Point(6, 22)
+        Me.LabelImpresora.Name = "LabelImpresora"
+        Me.LabelImpresora.Size = New System.Drawing.Size(176, 18)
+        Me.LabelImpresora.TabIndex = 10
+        Me.LabelImpresora.Text = "Impresora Seleccionada: "
+        '
         'Panel
         '
         Me.AcceptButton = Me.OK
@@ -1050,7 +1132,8 @@ Partial Class Panel
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.Salir
-        Me.ClientSize = New System.Drawing.Size(476, 720)
+        Me.ClientSize = New System.Drawing.Size(476, 733)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Scrap)
         Me.Controls.Add(Me.grBobina)
         Me.Controls.Add(Me.grOpciones)
@@ -1059,7 +1142,6 @@ Partial Class Panel
         Me.Controls.Add(Me.grEtPalet)
         Me.Controls.Add(Me.grCopias)
         Me.Controls.Add(Me.grHora)
-        Me.Controls.Add(Me.Salir)
         Me.Controls.Add(Me.grTurno)
         Me.Controls.Add(Me.grDatos)
         Me.Controls.Add(Me.grOF)
@@ -1091,6 +1173,8 @@ Partial Class Panel
         Me.grOpciones.PerformLayout()
         Me.grBobina.ResumeLayout(False)
         Me.grBobina.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1192,4 +1276,13 @@ Partial Class Panel
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Friend WithEvents MenuRechazo As ToolStripMenuItem
     Friend WithEvents Scrap As Button
+    Friend WithEvents MenuConexMQTT As ToolStripMenuItem
+    Friend WithEvents ImpresoraToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PrinterRobot As ToolStripMenuItem
+    Friend WithEvents PrinterSato As ToolStripMenuItem
+    Friend WithEvents PrinterLocal As ToolStripMenuItem
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents LabelImpresora As Label
+    Friend WithEvents ImpresoraSeleccionada As Label
+    Friend WithEvents RepetirEtiquetaAntiguaToolStripMenuItem As ToolStripMenuItem
 End Class

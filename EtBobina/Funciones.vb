@@ -10,7 +10,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Module Funciones
 
-    Public Function Leer_Parametros() As Boolean
+    Public Function Leer_Parametros(ByRef Datos As Datosclass) As Boolean
         Dim Config As New System.Configuration.AppSettingsReader
 
         Leer_Parametros = True
@@ -28,9 +28,9 @@ Module Funciones
             Datos.BDReporting_Prod = Config.GetValue("BD-REPORTING", GetType(System.String)).ToString
             Datos.UsuarioReporting_Prod = Funciones.Decrypt("_Avestruz19", Config.GetValue("USUARIO-REPORTING", GetType(System.String)).ToString)
             Datos.PasswordReporting_Prod = Funciones.Decrypt("_Avestruz19", Config.GetValue("CONTRASEÑA-REPORTING", GetType(System.String)).ToString)
-            Datos.Servidor_Test = Config.GetValue("SERVER-SQL-TEST", GetType(System.String)).ToString
-            Datos.BD_Test = Config.GetValue("BD-SQL-TEST", GetType(System.String)).ToString
-            Datos.Empresa_Test = Config.GetValue("EMPRESA-TEST", GetType(System.String)).ToString
+            Datos.Servidor_Test = Decrypt("_Avestruz19", Config.GetValue("SERVER-SQL-TEST", GetType(System.String)).ToString)
+            Datos.BD_Test = Decrypt("_Avestruz19", Config.GetValue("BD-SQL-TEST", GetType(System.String)).ToString)
+            Datos.Empresa_Test = Decrypt("_Avestruz19", Config.GetValue("EMPRESA-TEST", GetType(System.String)).ToString)
             Datos.Usuario_Test = Funciones.Decrypt("_Avestruz19", Config.GetValue("USUARIO-SQL-TEST", GetType(System.String)).ToString)
             Datos.Password_Test = Funciones.Decrypt("_Avestruz19", Config.GetValue("CONTRASEÑA-SQL-TEST", GetType(System.String)).ToString)
             Datos.ServidorWeb_Test = Config.GetValue("SERVER-WEB-TEST", GetType(System.String)).ToString
@@ -38,6 +38,7 @@ Module Funciones
             Datos.BDReporting_Test = Config.GetValue("BD-REPORTING-TEST", GetType(System.String)).ToString
             Datos.UsuarioReporting_Test = Funciones.Decrypt("_Avestruz19", Config.GetValue("USUARIO-REPORTING-TEST", GetType(System.String)).ToString)
             Datos.PasswordReporting_Test = Funciones.Decrypt("_Avestruz19", Config.GetValue("CONTRASEÑA-REPORTING-TEST", GetType(System.String)).ToString)
+            Datos.ImpresoraAntiguas = Config.GetValue("IMPRESORA-ANTIGUAS", GetType(System.String)).ToString
             Datos.ImpresoraQR = Config.GetValue("IMPRESORA-QR", GetType(System.String)).ToString
             Datos.TecIt_ID = Config.GetValue("TECIT ID", GetType(System.String)).ToString
             Datos.TecIt_Empresa = Config.GetValue("TECIT EMPRESA", GetType(System.String)).ToString
@@ -45,8 +46,24 @@ Module Funciones
             Datos.Log = Config.GetValue("LOG", GetType(System.String)).ToString
             Datos.Versión = Config.GetValue("VERSION", GetType(System.String)).ToString
             Datos.Lote_Palet = (Config.GetValue("LOTE-PALET", GetType(System.String)).ToString = "SI")
+
+            Datos.Mqtt_IP = Config.GetValue("MQTT-IP", GetType(System.String)).ToString
+            Datos.Mqtt_Port = CInt(Config.GetValue("MQTT-PORT", GetType(System.String)).ToString)
+            Datos.Mqtt_ClientID = Config.GetValue("MQTT-CLIENT-ID", GetType(System.String)).ToString
+            Datos.Mqtt_Topic = Config.GetValue("MQTT-TOPIC", GetType(System.String)).ToString
+
+            Datos.Plantilla_Leiza = Config.GetValue("PLANTILLA-LEIZA", GetType(System.String)).ToString
+            Datos.Plantilla_Sonoco = Config.GetValue("PLANTILLA-SONOCO", GetType(System.String)).ToString
+            Datos.Plantilla_Essity = Config.GetValue("PLANTILLA-ESSITY", GetType(System.String)).ToString
+            Datos.Plantilla_CZZ = Config.GetValue("PLANTILLA-CZZ", GetType(System.String)).ToString
+            Datos.Plantilla_Normal = Config.GetValue("PLANTILLA-NORMAL", GetType(System.String)).ToString
+
+            Datos.Sato_IP = Config.GetValue("SATO-IP", GetType(System.String)).ToString
+            Datos.Sato_Port = Config.GetValue("SATO-PORT", GetType(System.String)).ToString
+
             Datos.Reload = True
             Datos.ModoTest = False
+            Datos.SalidaEtiqueta = My.Settings.SalidaEtiqueta
         Catch ex As Exception
             MsgBox("Error al leer parámetros " & ex.Message, MsgBoxStyle.Critical)
             Leer_Parametros = False
@@ -55,7 +72,7 @@ Module Funciones
     End Function
 
 
-    Public Function Extraer_Usuario_Web() As Boolean
+    Public Function Extraer_Usuario_Web(Datos As Datosclass) As Boolean
         Dim olAdapter As SqlClient.SqlDataAdapter
         Dim ds As DataSet = Nothing
 
@@ -77,10 +94,12 @@ Module Funciones
         End If
 
 
-        If Extraer_Usuario_Web And ds.Tables(0).Rows.Count = 0 Then
-            MsgBox("No Existe resgistro en Información Empresa")
-            Log("No Existe resgistro en Información Empresa")
-            Extraer_Usuario_Web = False
+        If Extraer_Usuario_Web Then
+            If ds.Tables(0).Rows.Count = 0 Then
+                MsgBox("No Existe resgistro en Información Empresa")
+                Log("No Existe resgistro en Información Empresa")
+                Extraer_Usuario_Web = False
+            End If
         End If
 
         If Extraer_Usuario_Web Then
@@ -128,6 +147,8 @@ Module Funciones
             Datos.UsuarioReporting = Datos.UsuarioReporting_Prod
             Datos.PasswordReporting = Datos.PasswordReporting_Prod
         End If
+
+        FuncionesDatos.Extraer_Altura_Palet()
     End Sub
 
 
@@ -148,12 +169,15 @@ Module Funciones
 
         If Etiqueta.TipoPeso = 1 Then Peso = Etiqueta.PesoBruto
 
-        Etiqueta.Barcode = "(00) " + "3" + "84" + "33274" + Format(Etiqueta.Palet, "00000000") +
-                                    Format(Etiqueta.Rodajas, "00")
+        Etiqueta.Barcode = "(00) " + "3" + "84" + "33274" +
+                            Format(Etiqueta.Palet, "00000000") +
+                            Format(Etiqueta.Rodajas, "00")
 
 
 
-        Etiqueta.BarcodeLeiza = Etiqueta.PedidoCliente + "/" + Etiqueta.ReferenciaCruzada + "/" + Format(Peso, "0000")
+        Etiqueta.BarcodeLeiza = Etiqueta.PedidoCliente + "/" +
+                                Etiqueta.ReferenciaCruzada + "/" +
+                                Format(Peso, "0000")
 
         'Etiqueta.BarcodeLeiza = "09102020_SIDE" + "/" + Etiqueta.ReferenciaCruzada + "/" +
         'Format(Etiqueta.PesoNeto, "0000")
@@ -219,42 +243,34 @@ Module Funciones
         Etiqueta.Rollo_RodajasDuras = False
     End Sub
 
-    Public Sub Grabar_Etiqueta()
+    Public Sub Grabar_Etiqueta(ByRef ht As List(Of EtiquetaClass))
+        If Etiqueta.OP = "" Then
+            Etiqueta = Etiqueta
+        End If
         If Etiqueta.Manual Then
             EtManual = Etiqueta
             Exit Sub
         End If
 
-        If IsNothing(Historial) Then
-            ReDim Historial(0)
-        Else
-            Dim n As Byte
+        Dim existe As Boolean = ht.Any(Function(p) p.OP = Etiqueta.OP AndAlso p.Rodajas = Etiqueta.Rodajas AndAlso p.EtiquetasPorPalet = Etiqueta.EtiquetasPorPalet)
 
-            For n = 0 To Historial.Length - 1
-                If Historial(n).OP = Etiqueta.OP And Historial(n).Rodajas = Etiqueta.Rodajas And
-                   Historial(n).EtiquetasPorPalet = Etiqueta.EtiquetasPorPalet Then
-                    Exit Sub
-                End If
-
-            Next
-
-            If Historial.Length = 6 Then
-                For n = 0 To 4
-                    Historial(n) = Historial(n + 1)
-                Next
-            End If
-            If Historial.Length < 6 Then ReDim Preserve Historial(Historial.Length)
+        If Not existe Then
+            ht.Add(Etiqueta.Clone())
         End If
-
-        Historial(Historial.Length - 1) = Etiqueta
-
-        'Historial(Historial.Length - 1).PesoNeto = 0
-        Historial(Historial.Length - 1).MetrosRodaja = 0
 
         Etiqueta.OP = ""
         Etiqueta.PesoNeto = 0
         Etiqueta.PesoPalet = 0
     End Sub
+
+    Public Sub Borrar_Historial(ByRef ht As List(Of EtiquetaClass))
+        If Etiqueta.Manual Then
+            EtManual = Etiqueta
+            Exit Sub
+        End If
+        ht.RemoveAll(Function(p) p.OP = Etiqueta.OP)
+    End Sub
+
 
     Public Function FormatoAncho(valor As Single) As String
         If Right(Format(valor, "0.0"), 1) = "0" Then
@@ -264,6 +280,11 @@ Module Funciones
         End If
 
     End Function
+
+    Public Sub Guardar_valores_Impresora()
+        My.Settings.SalidaEtiqueta = Datos.SalidaEtiqueta
+        My.Settings.Save()
+    End Sub
 
     Public Sub Calcular_Metros()
         Dim Metros As Single

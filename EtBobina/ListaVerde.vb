@@ -1,5 +1,6 @@
 ﻿Public Class ListaVerde
     Dim OrdenarPor As String = "[Bobina] DESC, [Lote] DESC"
+
     Public Function Mostrar_Lista_Verde() As Boolean
         Dim oRead As SqlClient.SqlDataReader
         Dim cSql As String
@@ -176,7 +177,7 @@
     End Sub
 
     Private Sub Manual_Click(sender As Object, e As EventArgs) Handles Manual.Click
-        Dim et2 As stEtiqueta
+        Dim et2 As EtiquetaClass = New EtiquetaClass
 
 
         et2 = Etiqueta

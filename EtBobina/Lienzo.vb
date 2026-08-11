@@ -78,7 +78,8 @@ Public Class Lienzo
 
                 Barcode1.Barcode.BarcodeType = TECIT.TBarCode.BarcodeType.EanUcc128
                 Barcode1.Barcode.TranslateEscapeSequences = True
-                Barcode1.Barcode.Data = "93" + Etiqueta.ReferenciaCruzada + Chr(92) + "F" + "30" + Peso
+                Barcode1.Barcode.Data = "93" + Etiqueta.ReferenciaCruzada + Chr(92) +
+                                        "F" + "30" + Peso
                 Barcode1.Size = New Size(172, 58)
                 Barcode1.Visible = True
                 Barcode1.Refresh()
@@ -95,7 +96,9 @@ Public Class Lienzo
 
                 Barcode2.Refresh()
 
-                Dim gs1 As String = "3" + "84" + "33274" + Format(Etiqueta.Palet, "0000000") + Format(Etiqueta.Rodajas, "00")
+                Dim gs1 As String = "3" + "84" + "33274" +
+                                    Format(Etiqueta.Palet, "0000000") +
+                                    Format(Etiqueta.Rodajas, "00")
 
                 Barcode3.Barcode.BarcodeType = TECIT.TBarCode.BarcodeType.GS1_128
                 Barcode3.Barcode.TranslateEscapeSequences = True
@@ -276,13 +279,11 @@ Public Class Lienzo
                     " La etiqueta se ha de grabar de registrar en Navision con posterioridad")
         End If
         Imprimir_Etiqueta()
-        Grabar_Etiqueta()
         Me.Close()
     End Sub
 
     Private Sub Imprimir_Click(sender As Object, e As EventArgs)
         Imprimir_Etiqueta()
-        Grabar_Etiqueta()
         Me.Close()
     End Sub
 
@@ -300,34 +301,35 @@ Public Class Lienzo
                 If Anonima Then
                     Imprimir_Etiqueta_Anonima()
                 Else
-                    generar_Barcode()
-                    For n = 1 To Etiqueta.Copias
-                        For Each PaperSize In PrintDoc.PrinterSettings.PaperSizes
-                            If (PaperSize.PaperName = "A4") Then
-                                PrintDoc.DefaultPageSettings.PaperSize = PaperSize
-                                Exit For
+                        generar_Barcode()
+                        For n = 1 To Etiqueta.Copias
+                            For Each PaperSize In PrintDoc.PrinterSettings.PaperSizes
+                                If (PaperSize.PaperName = "A4") Then
+                                    PrintDoc.DefaultPageSettings.PaperSize = PaperSize
+                                    Exit For
+                                End If
+                            Next
+
+                        PrintDoc.PrinterSettings.PrinterName = Datos.ImpresoraAntiguas
+                        PrintDoc.DefaultPageSettings.Landscape = True
+                            PrintDoc.DefaultPageSettings.Margins.Left = 0
+                            PrintDoc.DefaultPageSettings.Margins.Top = 0
+                            PrintDoc.Print()
+
+                            'If Etiqueta.Cliente = "931" Then Etiqueta.GenerarQR = True
+
+                            If Etiqueta.GenerarQR Then
+                                PrintQR.PrinterSettings.PrinterName = Datos.ImpresoraQR
+                                'PrintQR.DefaultPageSettings.PaperSize = New System.Drawing.Printing.PaperSize("Etiqueta QR", 315, 131)
+                                'PrintQR.DefaultPageSettings.Landscape = True
+                                PrintQR.DefaultPageSettings.Margins.Left = 0
+                                PrintQR.DefaultPageSettings.Margins.Top = 0
+                                ' KKK PrintQR.Print()
                             End If
                         Next
-
-                        PrintDoc.DefaultPageSettings.Landscape = True
-                        PrintDoc.DefaultPageSettings.Margins.Left = 0
-                        PrintDoc.DefaultPageSettings.Margins.Top = 0
-                        PrintDoc.Print()
-
-                        'If Etiqueta.Cliente = "931" Then Etiqueta.GenerarQR = True
-
-                        If Etiqueta.GenerarQR Then
-                            PrintQR.PrinterSettings.PrinterName = Datos.ImpresoraQR
-                            'PrintQR.DefaultPageSettings.PaperSize = New System.Drawing.Printing.PaperSize("Etiqueta QR", 315, 131)
-                            'PrintQR.DefaultPageSettings.Landscape = True
-                            PrintQR.DefaultPageSettings.Margins.Left = 0
-                            PrintQR.DefaultPageSettings.Margins.Top = 0
-                            ' KKK PrintQR.Print()
-                        End If
-                    Next
+                    End If
                 End If
             End If
-        End If
     End Sub
 
     Public Sub Imprimir_Etiqueta_Pulper()

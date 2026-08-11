@@ -54,6 +54,24 @@ Module FuncionesDatos
         End Try
     End Function
 
+    Public Sub Extraer_Altura_Palet()
+        Dim oRead As SqlClient.SqlDataReader
+        Dim cSql As String
+
+        If Not Abrir_BBDD() Then Exit Sub
+
+        cSql = $"SELECT Top 1 [Altura Palet (mm)] FROM [{Datos.Empresa}$Manufacturing Setup]"
+
+        oRead = Nothing
+        If Ejecutar_Datareader(cSql, oRead, True) Then
+            If oRead.HasRows Then Datos.AlturaPalet = oRead.Item("Altura Palet (mm)")
+        End If
+
+        oRead.Close()
+    End Sub
+
+
+
     Public Function Extraer_Datos(NoOP As String, IncrementoPalet As Byte, SoloAbiertas As Boolean) As String
         Dim oRead As SqlClient.SqlDataReader
         Dim PuedeUsarOPSinActivar As Boolean = False
@@ -64,7 +82,6 @@ Module FuncionesDatos
             Extraer_Datos = "ERROR"
             Exit Function
         End If
-
 
         Etiqueta.OP = NoOP
         cSql = $"SELECT TOP 1 OPL.[Line No_], OPL.[Item No_], OPL.[Variant Code], OPL.[Quantity], OPH.[Terminada], OPH.[Pedido Origen], OPH.[Ref_ Externa]
@@ -133,15 +150,18 @@ Module FuncionesDatos
         End If
 
         If Etiqueta.Pedido = "" Then
-            cSql = $" SELECT CU.[No_] , '', CU.[Su Referencia], CU.[Language Code], CU.[Plan de Verificacion], CU.[Tipo Etiqueta], CU.[Etiqueta Tipo Peso], CU.[Generar Etiqueta QR], CU.[Etiqueta CZZ]
+            cSql = $" SELECT CU.[No_] , '', CU.[Su Referencia], CU.[Language Code], CU.[Plan de Verificacion], CU.[Tipo Etiqueta], CU.[Etiqueta Tipo Peso], 
+                             CU.[Generar Etiqueta QR], CU.[Top Etiqueta _], CU.[Top Etiqueta mm],
+                             CU.[Etiqueta Frontal], CU.[Etiqueta Lateral], CU.[Etiqueta Trasera]
                        FROM [{Datos.Empresa}$Customer] CU
                         where CU.[No_] = '{Etiqueta.Variante.Substring(0, 3)}'"
         Else
-            cSql = " SELECT SH.[Sell-to Customer No_], SH.[External Document No_], CU.[Su Referencia], CU.[Language Code], CU.[Plan de Verificacion],CU.[Tipo Etiqueta], CU.[Etiqueta Tipo Peso], CU.[Generar Etiqueta QR], CU.[Etiqueta CZZ] " +
-                    " FROM [" + Datos.Empresa + "$Sales Header] SH" +
-                    " INNER JOIN  [" + Datos.Empresa + "$Customer] CU" +
-                    "       ON CU.[No_] = SH.[Sell-to Customer No_]" +
-                    "  where SH.[Document Type] = 1  AND SH.[No_] = '" + Etiqueta.Pedido.ToString + "'"
+            cSql = $" SELECT SH.[Sell-to Customer No_], SH.[External Document No_], CU.[Su Referencia], CU.[Language Code], CU.[Plan de Verificacion],CU.[Tipo Etiqueta], 
+                            CU.[Etiqueta Tipo Peso], CU.[Generar Etiqueta QR], CU.[Top Etiqueta _], CU.[Top Etiqueta mm],
+                            CU.[Etiqueta Frontal], CU.[Etiqueta Lateral], CU.[Etiqueta Trasera]
+                     FROM [{Datos.Empresa}$Sales Header] SH
+                     INNER Join  [{Datos.Empresa}$Customer] CU  ON CU.[No_] = SH.[Sell-to Customer No_]
+                     WHERE SH.[Document Type] = 1  And SH.[No_] = '{Etiqueta.Pedido.ToString}'"
         End If
 
         If Not Ejecutar_Datareader(cSql, oRead, True) Then
@@ -160,11 +180,15 @@ Module FuncionesDatos
             Etiqueta.TipoEtiqueta = oRead.Item("Tipo Etiqueta")
             Etiqueta.TipoPeso = oRead.Item("Etiqueta Tipo Peso")
             Etiqueta.GenerarQR = oRead.Item("Generar Etiqueta QR")
-            Etiqueta.EtiquetaCZZ = (oRead.Item("Etiqueta CZZ") = 1)
+            Etiqueta.TopPorcentaje = oRead.Item("Top Etiqueta _")
+            Etiqueta.TopMM = oRead.Item("Top Etiqueta mm")
+            Etiqueta.ImpresionFrontal = oRead.Item("Etiqueta Frontal")
+            Etiqueta.ImpresionLateral = oRead.Item("Etiqueta Lateral")
+            Etiqueta.ImpresionTrasera = oRead.Item("Etiqueta Trasera")
         End If
 
         ' KK
-        'Etiqueta.TipoEtiqueta = 4
+        'Etiqueta.TipoEtiqueta = 5
         oRead.Close()
 
         'Nombre CZZ

@@ -166,8 +166,8 @@ Module WebServices
 
         Try
             MyWs.Url = Datos.ServidorWeb
-            MyWs.Credentials = New System.Net.NetworkCredential(Datos.UsuarioWeb, Datos.PasswordWeb, Datos.DominioWeb)
 
+            MyWs.Credentials = New System.Net.NetworkCredential(Datos.UsuarioWeb, Datos.PasswordWeb, Datos.DominioWeb)
             Verificar_Peso_Bobina = MyWs.Verificar_Peso_Bobina(xOP, xBobina, xPeso)
         Catch ex As Exception
             Log("Error en los servicios WEB Verificar_Peso_Bobina: " + ex.Message)
@@ -232,7 +232,7 @@ Module WebServices
         MyWs.Dispose()
     End Function
 
-    Public Sub Cambio_Rollo(Etiqueta As stEtiqueta)
+    Public Sub Cambio_Rollo(Etiqueta As EtiquetaClass)
         Dim MyWs As New WebReference.Web
 
         Try

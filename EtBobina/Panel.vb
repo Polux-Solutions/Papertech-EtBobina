@@ -1,12 +1,25 @@
 ﻿Option Explicit On
 Public Class Panel
     Public Contador As Byte
+
     Private Sub Etiqueta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.BackColor = ColorFondo()
         Me.MODOToolStrip.Text = ""
 
         If Datos.ModoTest Then Me.MODOToolStrip.Text = " **** TEST ****  "
         Me.Location = Screen.PrimaryScreen.WorkingArea.Location
+
+        Dim n As Integer = Me.Salir.Location.X + Me.Salir.Size.Width
+        Dim pt As Point
+        pt.Y = Me.Salir.Location.Y
+        pt.X = Me.LabelImpresora.Location.X
+
+        Dim sz As Size
+        sz.Height = Me.Salir.Height
+        sz.Width = n
+        Me.Salir.Location = pt
+        Me.Salir.Size = sz
+
         Status_Quo(0)
     End Sub
 
@@ -43,7 +56,6 @@ Public Class Panel
                 Me.grRepetir.Visible = False
                 Me.Scrap.Visible = False
                 Me.MenuRechazo.Visible = False
-                Me.Salir.Visible = True
                 Me.txEtiqPalet.Text = "1"
                 Me.txMetrosPalet.Text = ""
                 Contador = 1
@@ -64,6 +76,13 @@ Public Class Panel
                 punto2.Y = Me.Location.Y + 10
                 ListaVerde.Location = punto2
                 ListaVerde.Visible = False
+
+                Printer_Colores()
+
+                Me.Salir.Visible = True
+                Me.LabelImpresora.Visible = False
+                Me.ImpresoraSeleccionada.Visible = False
+
                 Timer1.Stop()
 
             Case 1 ' Introducir OF
@@ -107,7 +126,6 @@ Public Class Panel
                 Me.AcceptButton = Me.OK
 
                 Me.grDatos.Visible = False
-                Me.Salir.Visible = True
                 Me.Scrap.Visible = False
                 Me.MenuRechazo.Visible = False
 
@@ -127,7 +145,9 @@ Public Class Panel
                     ListaVerde.Visible = True
                     ListaVerde.Mostrar_Lista_Verde()
                 End If
-
+                Me.Salir.Visible = True
+                Me.LabelImpresora.Visible = False
+                Me.ImpresoraSeleccionada.Visible = False
 
             Case 2 ' Introducir Datos
                 Lienzo.Location = punto
@@ -162,7 +182,6 @@ Public Class Panel
 
                 Me.Manual.Visible = False
                 Me.grDatos.Visible = True
-                Me.Salir.Visible = False
                 Me.AcceptButton = Me.DatosOK
 
                 If Datos.ActualizarPalet Then
@@ -200,6 +219,13 @@ Public Class Panel
 
                 Me.txPesoNeto.Select()
 
+                Me.Salir.Visible = False
+                Me.LabelImpresora.Visible = True
+                Me.ImpresoraSeleccionada.Visible = True
+
+                Mostrar_Impresora_Seleccionada()
+
+
                 Timer1.Interval = 60000 ' 1 Minuto
                 Timer1.Start()
         End Select
@@ -218,7 +244,7 @@ Public Class Panel
 
         Lienzo.txCliente.Text = Etiqueta.Cliente
         Lienzo.txFecha.Text = Format(Datos.FechaTrabajo, "dd/MM/yyyy")
-        Lienzo.txAncho.Text = FORmatoAncho(Etiqueta.Ancho)
+        Lienzo.txAncho.Text = FormatoAncho(Etiqueta.Ancho)
         Lienzo.txRodajas.Text = Etiqueta.Rodajas.ToString("00")
         Lienzo.txGramaje.Text = Etiqueta.Gramaje.ToString
         Lienzo.txCalibre.Text = Etiqueta.Calibre.ToString
@@ -249,6 +275,14 @@ Public Class Panel
             Lienzo.txAncho.Text = Etiqueta.CZZ_Ancho
             Lienzo.txRodajas.Text = Etiqueta.CZZ_Rodajas
         End If
+    End Sub
+
+    Private Sub Mostrar_Impresora_Seleccionada()
+        Select Case Datos.SalidaEtiqueta
+            Case 1 : Me.ImpresoraSeleccionada.Text = "Robot"
+            Case 2 : Me.ImpresoraSeleccionada.Text = "Manual"
+            Case 3 : Me.ImpresoraSeleccionada.Text = "Etiquetas Antiguas"
+        End Select
     End Sub
 
     Private Sub turnoA_CheckedChanged(sender As Object, e As EventArgs) Handles turnoA.CheckedChanged
@@ -312,45 +346,33 @@ Public Class Panel
         Me.OF_5.Visible = False
         Me.OF_6.Visible = False
 
-        If IsNothing(Historial) Then Exit Sub
+        Dim n As Integer = 0
 
-        Dim n As Byte
-        n = 0
-        If Historial.Length > 6 Then n = Historial.Length - 6
+        For Each p As EtiquetaClass In Historial.Skip(Historial.Count - 6)
+            n += 1
 
-        If Historial.Length >= 1 Then
-            Me.OF_1.Text = Historial(n).OP.ToString + "-" + Historial(n).Rodajas.ToString("00") + "-" + Historial(n).EtiquetasPorPalet.ToString("00")
-            Me.OF_1.Visible = True
-        End If
-        If Historial.Length >= 2 Then
-            n += 1
-            Me.OF_2.Text = Historial(n).OP.ToString + "-" + Historial(n).Rodajas.ToString("00") + "-" + Historial(n).EtiquetasPorPalet.ToString("00")
-            Me.OF_2.Visible = True
-        End If
-        If Historial.Length >= 3 Then
-            n += 1
-            Me.OF_3.Text = Historial(n).OP.ToString + "-" + Historial(n).Rodajas.ToString("00") + "-" + Historial(n).EtiquetasPorPalet.ToString("00")
-            Me.OF_3.Visible = True
-        End If
-        If Historial.Length >= 4 Then
-            n += 1
-            Me.OF_4.Text = Historial(n).OP.ToString + "-" + Historial(n).Rodajas.ToString("00") + "-" + Historial(n).EtiquetasPorPalet.ToString("00")
-            Me.OF_4.Visible = True
-        End If
-        If Historial.Length >= 5 Then
-            n += 1
-            Me.OF_5.Text = Historial(n).OP.ToString + "-" + Historial(n).Rodajas.ToString("00") + "-" + Historial(n).EtiquetasPorPalet.ToString("00")
-            Me.OF_5.Visible = True
-        End If
-        If Historial.Length >= 6 Then
-            n += 1
-            Me.OF_6.Text = Historial(n).OP.ToString + "-" + Historial(n).Rodajas.ToString("00") + "-" + Historial(n).EtiquetasPorPalet.ToString("00")
-            Me.OF_6.Visible = True
-        End If
+            If p.OP = "" Then
+                p.OP = p.OP
+            End If
 
+            Select Case n
+                Case 1 : Me.OF_1.Text = p.OP.ToString + "-" + p.Rodajas.ToString("00") + "-" + p.EtiquetasPorPalet.ToString("00")
+                    Me.OF_1.Visible = True
+                Case 2 : Me.OF_2.Text = p.OP.ToString + "-" + p.Rodajas.ToString("00") + "-" + p.EtiquetasPorPalet.ToString("00")
+                    Me.OF_2.Visible = True
+                Case 3 : Me.OF_3.Text = p.OP.ToString + "-" + p.Rodajas.ToString("00") + "-" + p.EtiquetasPorPalet.ToString("00")
+                    Me.OF_3.Visible = True
+                Case 4 : Me.OF_4.Text = p.OP.ToString + "-" + p.Rodajas.ToString("00") + "-" + p.EtiquetasPorPalet.ToString("00")
+                    Me.OF_4.Visible = True
+                Case 5 : Me.OF_5.Text = p.OP.ToString + "-" + p.Rodajas.ToString("00") + "-" + p.EtiquetasPorPalet.ToString("00")
+                    Me.OF_5.Visible = True
+                Case 6 : Me.OF_6.Text = p.OP.ToString + "-" + p.Rodajas.ToString("00") + "-" + p.EtiquetasPorPalet.ToString("00")
+                    Me.OF_6.Visible = True
+            End Select
+        Next
     End Sub
     Private Sub Salir_Click(sender As Object, e As EventArgs) Handles Salir.Click
-        Bye
+        Bye()
     End Sub
 
     Private Sub Bye()
@@ -501,7 +523,6 @@ Public Class Panel
                     " La etiqueta se ha de grabar de registrar en Navision con posterioridad")
         End If
 
-
         If Etiqueta.Copias > 0 Then
             Actualizar_Lienzo()
             If Etiqueta.Pulper Then
@@ -509,10 +530,18 @@ Public Class Panel
                 Etiqueta.Rodajas = Etiqueta.CZZ_Rodajas
                 Etiqueta.ReferenciaNombre = Datos.CZZ_Nombre
             End If
-            Lienzo.Imprimir_Etiqueta()
-            Grabar_Etiqueta()
+
+            Imprimir_Etiqueta()
+
+            If Not Etiqueta.Terminar Then
+                Grabar_Etiqueta(Historial)
+            Else
+                Borrar_Historial(Historial)
+            End If
+
             Lienzo.Close()
         End If
+
 
         Status_Quo(1)
 
@@ -551,13 +580,15 @@ Public Class Panel
             Exit Function
         End If
 
-        If Not WebServices.Verificar_No_Bobina(txOF.Text, CLng(Me.txBobina.Text)) Then
-            MsgBox("El Nº de Bobina introducido no corresponde con esa Orden de Producción", MsgBoxStyle.Critical, "Etiquetas")
-            Me.txBobina.SelectAll()
-            Me.txBobina.Select()
-            Validar_Datos = False
-            Exit Function
-        End If
+        ' KK
+
+        'If Not WebServices.Verificar_No_Bobina(txOF.Text, CLng(Me.txBobina.Text)) Then
+        ' MsgBox("El Nº de Bobina introducido no corresponde con esa Orden de Producción", MsgBoxStyle.Critical, "Etiquetas")
+        ' Me.txBobina.SelectAll()
+        ' Me.txBobina.Select()
+        ' Validar_Datos = False
+        ' Exit Function
+        ' End If
 
         If Not IsNumeric(Me.txPalet.Text) Then
             Me.txPalet.SelectAll()
@@ -687,7 +718,7 @@ Public Class Panel
         NoPalet = Etiqueta.Palet
         NoBobina = Etiqueta.Bobina
 
-        Etiqueta = Historial(Id)
+        Etiqueta = Historial(Id).Clone
         Etiqueta.Palet = NoPalet
         Etiqueta.Bobina = NoBobina
 
@@ -874,13 +905,33 @@ Public Class Panel
     Private Sub SoloImprimir_Click(sender As Object, e As EventArgs) Handles SoloImprimir.Click
         If Etiqueta.Manual Then EtManual = Etiqueta
 
-        If Etiqueta.Copias > 0 Then
-            'Lienzo.Imprimir_Etiqueta_Pulper()
+        Imprimir_Etiqueta()
+    End Sub
+
+    Private Sub Imprimir_Etiqueta()
+        If Datos.SalidaEtiqueta = 3 Then
             Lienzo.Imprimir_Etiqueta()
             Lienzo.Close()
-        End If
+        Else
+            If Datos.SalidaEtiqueta = 1 Then 'Robot
+                Ubicacion.ShowDialog()
+            Else
+                Datos.LastPosition = 1
+                Datos.LastOP = ""
+            End If
 
-        Status_Quo(1)
+            Dim Mac As Macsa = New Macsa()
+            Mac.Estado = True
+            Mac.ErrorText = ""
+
+            If Datos.SalidaEtiqueta = 1 Then ' Robot
+                Mac.Mensaje()
+            Else
+                If Etiqueta.Copias > 0 Then Mac.Etiqueta_PRN()
+            End If
+
+            If Not Mac.Estado Then Log($"Error Envío: {Mac.ErrorText}")
+        End If
     End Sub
 
     Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
@@ -916,7 +967,7 @@ Public Class Panel
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim et2 As stEtiqueta
+        Dim et2 As EtiquetaClass = New EtiquetaClass
 
         cargar_Horario()
         et2 = Etiqueta
@@ -954,19 +1005,23 @@ Public Class Panel
     End Sub
 
     Private Sub RepetirEtiquetaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RepetirEtiquetaToolStripMenuItem.Click
-        Repetir_Etiqueta()
+        Repetir_Etiqueta(True)
     End Sub
 
-    Private Sub Repetir_Etiqueta()
-        Dim NoDoc As String
+    Private Sub RepetirEtiquetaAntiguaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RepetirEtiquetaAntiguaToolStripMenuItem.Click
+        Repetir_Etiqueta(False)
+    End Sub
 
-        NoDoc = InputBox("Nº de Palet ", "Repetir Etiqueta", "")
-        If NoDoc = "" Then Exit Sub
+    Private Sub Repetir_Etiqueta(EtiquetaManual As Boolean)
+        Repetir.ShowDialog()
+        If Repetir.PaletNo = 0 Then Exit Sub
+
+        If Repetir.EtiquetasNo = 0 Then Repetir.EtiquetasNo = 1
 
         Dim ds As DataSet = Nothing
         Dim tt As String
 
-        tt = "SELECT * FROM [" + Datos.Empresa + "$Lot No_ Information]  WHERE [Palet No_] = " + NoDoc + " ORDER BY [Order No_] DESC"
+        tt = $"SELECT * FROM [{Datos.Empresa}$Lot No_ Information]  WHERE [Palet No_] = {Repetir.PaletNo} ORDER BY [Order No_] DESC"
         If Cargar_Dataset(ds, tt) Then
             If ds.Tables(0).Rows.Count > 0 Then
                 Limpiar_Etiqueta()
@@ -981,21 +1036,28 @@ Public Class Panel
                     Etiqueta.PesoPalet = ds.Tables(0).Rows(0).Item("Peso Palet")
                     Etiqueta.PesoBruto = Etiqueta.PesoNeto + Etiqueta.PesoPalet
                     Etiqueta.Fecha = ds.Tables(0).Rows(0).Item("Fecha")
-                    Etiqueta.Copias = 1
+                    Etiqueta.Copias = Repetir.EtiquetasNo
 
                     Lienzo.txNeto.Text = Etiqueta.PesoNeto.ToString
                     Calcular_Metros()
-                    Lienzo.Imprimir_Etiqueta()
-                    Lienzo.Close()
 
-                    Status_Quo(1)
+                    If EtiquetaManual Then
+                        Dim Mac As Macsa = New Macsa()
+                        Mac.Estado = True
+                        Mac.ErrorText = ""
+
+                        Mac.Etiqueta_PRN()
+                    Else
+                        Lienzo.Imprimir_Etiqueta()
+                        Lienzo.Close()
+
+                        Status_Quo(1)
+                    End If
                 End If
+
+                ds.Dispose()
             End If
-
-            ds.Dispose()
         End If
-
-
     End Sub
 
     Private Sub MenuModoTest_Click(sender As Object, e As EventArgs) Handles MenuModoTest.Click
@@ -1009,12 +1071,33 @@ Public Class Panel
         Lienzo.Imprimir_Etiqueta_QR()
     End Sub
 
-
     Private Sub Rechazar()
         Rechazo.OP.Text = Me.txOF.Text
         Rechazo.Bobina.Text = Me.txBobina.Text
         Rechazo.ShowDialog()
         Cancelar()
+    End Sub
+
+    Private Sub Printer_Colores()
+        PrinterRobot.Checked = False
+        PrinterLocal.Checked = False
+        PrinterSato.Checked = False
+
+        PrinterRobot.ForeColor = Color.Black
+        PrinterLocal.ForeColor = Color.Black
+        PrinterSato.ForeColor = Color.Black
+
+        Select Case Datos.SalidaEtiqueta
+            Case 1
+                PrinterRobot.Checked = True
+                PrinterRobot.ForeColor = Color.DarkBlue
+            Case 2
+                PrinterSato.Checked = True
+                PrinterSato.ForeColor = Color.DarkBlue
+            Case 3
+                PrinterLocal.Checked = True
+                PrinterLocal.ForeColor = Color.DarkBlue
+        End Select
     End Sub
 
     Private Sub Scrap_Click(sender As Object, e As EventArgs) Handles Scrap.Click
@@ -1023,5 +1106,39 @@ Public Class Panel
 
     Private Sub MenuRechazo_Click(sender As Object, e As EventArgs) Handles MenuRechazo.Click
         Rechazar()
+    End Sub
+
+    Private Sub MenuConexMQTT_Click(sender As Object, e As EventArgs) Handles MenuConexMQTT.Click
+        Dim Macsa As Macsa = New Macsa
+
+        Macsa.Test()
+    End Sub
+
+    Private Sub PrinterRobot_Click(sender As Object, e As EventArgs) Handles PrinterRobot.Click
+        Datos.SalidaETiqueta = 1
+
+        Guardar_valores_Impresora()
+
+        Printer_Colores()
+        Mostrar_Impresora_Seleccionada()
+    End Sub
+
+
+    Private Sub PrinterLocal_Click_1(sender As Object, e As EventArgs) Handles PrinterLocal.Click
+        Datos.SalidaEtiqueta = 3
+
+        Guardar_valores_Impresora()
+
+        Printer_Colores()
+        Mostrar_Impresora_Seleccionada()
+    End Sub
+
+    Private Sub PrinterSato_Click(sender As Object, e As EventArgs) Handles PrinterSato.Click
+        Datos.SalidaEtiqueta = 2
+
+        Guardar_valores_Impresora()
+
+        Printer_Colores()
+        Mostrar_Impresora_Seleccionada()
     End Sub
 End Class

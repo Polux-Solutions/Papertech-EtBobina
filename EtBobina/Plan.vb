@@ -693,7 +693,7 @@ Public Class Plan
 
     Private Sub Rollo_Nuevo()
         Dim sql As String
-        Dim oRead As SqlClient.SqlDataReader
+        Dim oRead As SqlClient.SqlDataReader = Nothing
 
         sql = $"SELECT * FROM [{Datos.Empresa}$Cambio Rollo] WHERE [Rollo] = {Etiqueta.Bobina}"
         FuncionesDatos.Ejecutar_Datareader(sql, oRead, False)
